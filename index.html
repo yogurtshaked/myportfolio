@@ -15,11 +15,8 @@
 
    <header>
   <div id="navbar"></div>
-<script>
-  fetch("navbar.html")
-    .then(res => res.text())
-    .then(data => document.getElementById("navbar").innerHTML = data);
-</script>
+<script src="script.js"></script>
+
 </header>
 
 
@@ -100,7 +97,7 @@
   <div class="experience-page">
     <section class="experience">
         <div class="global-wrapper">
-      <p class="section-title">My Expertise</p>
+      <p class="section-title">My Experience</p>
       <hr class="divider" />
 
       <div class="experience-container">
@@ -259,10 +256,10 @@
   <div class="footer-right">
     <p class="social-title">SOCIALS</p>
     <div class="social-icons">
-      <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
-      <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
-      <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
-      <a href="#" class="social-icon"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/kristianne-gabas-993a842a1/" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="https://www.facebook.com/keigabas/" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/khgabas/" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://github.com/yogurtshaked" class="social-icon"><i class="fa-brands fa-github"></i></a>
     </div>
   </div>
   </div>
@@ -275,15 +272,8 @@
 
 
 </div>
-<script>
-  const hamburger = document.querySelector(".hamburger");
-  const mobileMenu = document.querySelector(".mobile-menu");
+<script src="script.js"></script>
 
-  hamburger.addEventListener("click", () => {
-    mobileMenu.style.display =
-      mobileMenu.style.display === "flex" ? "none" : "flex";
-  });
-</script>
 
 </body>
 </html>

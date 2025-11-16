@@ -623,7 +623,7 @@ body {
 }
 
 .siayanrock-project img{
-  width: 65%;
+  width: 90%;
 }
 
 /* RESPONSIVE */
@@ -682,6 +682,7 @@ body {
   }
 
   .project-title {
+    width: 85%;
     font-size: 1.4rem;
   }
 

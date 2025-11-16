@@ -324,11 +324,165 @@ body {
   flex-direction: row;
   align-items: center;
   gap: 0.8rem;
-  width: 480px;
+  max-width: 400px;
   background-color: rgb(248, 212, 212);
   border: 1px solid #dc4141;
   border-radius: 10px;
   color: rgb(216, 65, 65);
   font-weight: 500;
   line-height: normal;
+}
+
+/* ===========================
+   RESPONSIVE STYLES
+=========================== */
+@media (max-width: 1024px) {
+  .body-wrapper, .navbar {
+    padding: 0 50px;
+  }
+
+  .chloro-overview,
+  #gcode-page .chloro-overview,
+  #budgecat-page .chloro-overview,
+  #siayanrock-page .chloro-overview {
+    padding: 20px 50px;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .project-overview-container {
+    max-width: 90%;
+  }
+
+  .project-overview-content {
+    gap: 20px;
+  }
+
+  .project-overview-header p {
+    font-size: 1.2rem;
+  }
+
+  .project-features-headline h2 {
+    font-size: 1.5rem;
+  }
+
+  .project-card {
+    height: 390px;
+  }
+
+  .application-features-images img {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .body-wrapper, .navbar {
+    padding: 0 20px;
+  }
+
+  .navbar-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Hide desktop links */
+  .nav-links, .linkedin-btn {
+    display: none;
+  }
+
+  /* Add mobile hamburger menu */
+  .hamburger {
+    display: flex;
+    cursor: pointer;
+    gap: 5px;
+    flex-direction: column;
+  }
+
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: #fff;
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    z-index: 1001;
+  }
+
+  /* About section */
+  .chloro-overview,
+  #gcode-page .chloro-overview,
+  #budgecat-page .chloro-overview,
+  #siayanrock-page .chloro-overview {
+    flex-direction: column;
+    padding: 15px 20px;
+  }
+
+  .project-overview-content {
+    gap: 15px;
+  }
+
+  .project-overview-header p,
+  .project-features-headline h2,
+  .application-features-card-container h2 {
+    font-size: 1.2rem;
+  }
+
+  .project-card {
+    height: 440px;
+  }
+
+  .project-images,
+  .siayanrock-project {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .project-images img,
+  .siayanrock-project img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Font scaling for headers */
+  .chloro-header,
+  .gcode-header,
+  .budgecat-header,
+  .siayanrock-header {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .body-wrapper, .navbar {
+    padding: 0 10px;
+  }
+
+  .chloro-overview,
+  #gcode-page .chloro-overview,
+  #budgecat-page .chloro-overview,
+  #siayanrock-page .chloro-overview {
+    padding: 10px 10px;
+  }
+
+  .project-overview-header p,
+  .project-features-headline h2,
+  .application-features-card-container h2 {
+    font-size: 1rem;
+  }
+
+  .chloro-header,
+  .gcode-header,
+  .budgecat-header,
+  .siayanrock-header {
+    font-size: 2rem;
+  }
+
+  .project-card {
+    height: 260px;
+  }
 }
