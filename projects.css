@@ -452,7 +452,7 @@ body {
   }
 
   .project-card {
-    max-height: 360px;
+    max-height: 420px;
   }
 
   .project-images,
@@ -508,6 +508,6 @@ body {
   }
 
   .project-card {
-    max-height: 160px;
+    max-height: 360px;
   }
 }
