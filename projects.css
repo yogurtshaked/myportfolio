@@ -34,6 +34,11 @@
   src: url(fonts/metal.ttf);
 }
 
+@font-face {
+  font-family: book;
+  src: url(fonts/book.otf);
+}
+
 
 /* Basic Reset */
 * {
@@ -157,7 +162,7 @@ body {
 }
 
 .project-overview-container h2{
-  font-family: "miniver";
+  font-family: "book";
   font-size: 2.5rem;
   color:#8DAC5A;
 }
@@ -189,7 +194,7 @@ body {
 
 .project-overview-header p{
   font-size: 1.4rem;
-  font-family: "miniver";
+  font-family: "book";
   color: #87a654;
 }
 
@@ -201,7 +206,7 @@ body {
   margin-bottom: 30px;
 }
 .project-features-headline h2{
-  font-family: "miniver";
+  font-family: "book";
   color: #87a654;
   font-size: 2.4rem;
 }

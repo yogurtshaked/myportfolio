@@ -16,3 +16,15 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 });
+
+const scrollContainer = document.querySelector('.skills-scroll');
+
+scrollContainer.parentElement.addEventListener('mouseenter', () => {
+  // pause by reducing animation speed gradually
+  scrollContainer.style.animationPlayState = 'paused';
+});
+
+scrollContainer.parentElement.addEventListener('mouseleave', () => {
+  // resume smoothly
+  scrollContainer.style.animationPlayState = 'running';
+});

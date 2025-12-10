@@ -21,11 +21,14 @@
 
 
   <!-- About Section -->
-  <section class="about">
+  <section class="about" id="about">
     <div class="global-wrapper">
     <div class="about-content">
       <div class="about-text">
-        <h1>Hi, I'm Khaye!</h1>
+        <h1>
+          <img src="images/hello-imkei.png" alt="Hi, I'm Kei!" class="hello-logo">
+        </h1>
+
         <p>
           I'm currently a 4th-Year Software Engineering student who's passionate about software design and development.
           With experience in front-end development, UI/UX design, and backend integration.
@@ -35,24 +38,79 @@
           and problem-solving abilities.
         </p>
 
-        <div class="contact-box">
+        <!--<div class="contact-box">
           <p class="contact-label">Connect with me!</p>
           <a href="mailto:kristiannegabas@gmail.com" class="email">kristiannegabas@gmail.com</a>
-        </div>
+        </div> -->
       </div>
 
       <div class="about-img">
-        <img src="images/profilepic.JPG" alt="Kristianne Gabas" />
+        <img src="images/about-pic.svg" alt="Kristianne Gabas" />
       </div>
     </div>
     </div>
   </section>
 
-  <!-- Expertise Section -->
+  <div class="projects-page">
+        <section class="projects" id="projects">
+            <div class="global-wrapper">
+                <p class="section-title">Featured Projects</p>
+                <div class="project-card">
+                    <p class="project-year">Chloro – 2025</p>
+                    <div class="project-title-container">
+                    <h2 class="project-title">
+                    Designed and developed a mobile application for monitoring
+                    hydroponic lettuce growth
+                    </h2>
+                    </div>
+                    <a href="https://drive.google.com/drive/folders/14dBJShjwb-2rmHZCh45LYRgde37WzJMJ?usp=sharing" class="project-link" target="_blank" 
+   rel="noopener noreferrer">View Project</a>
+                    <div class="project-images">
+                        <img src="images/chloro/chloro1.png" alt="mockup 1">
+                        <img src="images/chloro/chloro2.png" alt="mockup 2">
+                        <img src="images/chloro/chloro3.png" alt="mockup 3">
+                        <img src="images/chloro/chloro4.png" alt="mockup 4">
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <p class="project-year">GCODE – 2024</p>
+                    <div class="project-title-container">
+                    <h2 class="project-title">
+                    Set up and integrated the Spotify API to retrieve song details directly from the app
+                    </h2>
+                    </div>
+                    <a href="https://drive.google.com/drive/folders/1NTAuS8_hnNb6e2k790YPyFyV1UJaj--i?usp=sharing" class="project-link" target="_blank" 
+   rel="noopener noreferrer">View Project</a>
+                    <div class="project-images">
+                        <img src="images/gcode/login.png" alt="mockup 1">
+                        <img src="images/gcode/register.png" alt="mockup 2">
+                        <img src="images/gcode/songregister.png" alt="mockup 3">
+                        <img src="images/gcode/playlist.png" alt="mockup 4">
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <p class="project-year">SiayanRock – 2024</p>
+                    <div class="project-title-container">
+                    <h2 class="project-title">
+                    Designed and developed the front-end interface of an unofficial hometel website
+                    </h2>
+                    </div>
+                    <a href="siayanrock.html" class="project-link">View Project</a>
+                    <div class="siayanrock-project">
+                        <img src="images/siayan/siayanrock_display.png" alt="mockup 1">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+ <!-- Expertise Section -->
   <div class="expertise-page">
-    <section class="expertise">
+    <section class="expertise" id="services">
         <div class="global-wrapper">
-      <p class="section-title">My Expertise</p>
+      <p class="section-title">What I Can Do</p>
       <hr class="divider" />
 
       <div class="expertise-container">
@@ -78,7 +136,7 @@
           </div>
         </div>
 
-        <div class="expertise-card">
+        <!--<div class="expertise-card">
           <p class="expertise-number">[03]</p>
           <div class="expertise-content">
             <h3>Back-End Development</h3>
@@ -87,13 +145,45 @@
               efficient API integration and database management.
             </p>
           </div>
+        </div> -->
         </div>
-      </div>
+
+        <!-- Skills Logos Row BELOW the expertise cards -->
+<div class="skills-scroll-wrapper">
+  <div class="skills-scroll">
+    <div class="skills-row">
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><p>Python</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"><p>Java</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++"><p>C++</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Dart"><p>Dart</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML"><p>HTML</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS"><p>CSS</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma"><p>Figma</p></div>
+      <div class="skill"><img src="images/canva.png" alt="Canva"><p>Canva</p></div>
+      <div class="skill"><img src="images/lightroom.png" alt="LR"><p>LR</p></div>
+
+      <!-- duplicate for seamless loop -->
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><p>Python</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"><p>Java</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++"><p>C++</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Dart"><p>Dart</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML"><p>HTML</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS"><p>CSS</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma"><p>Figma</p></div>
+      <div class="skill"><img src="images/canva.png" alt="Canva"><p>Canva</p></div>
+      <div class="skill"><img src="images/lightroom.png" alt="LR"><p>LR</p></div>
+    </div>
+  </div>
+</div>
+
+
+
+      
       </div>
     </section>
   </div>
 
-  <!-- Experience Section -->
+  <!--  
   <div class="experience-page">
     <section class="experience">
         <div class="global-wrapper">
@@ -190,55 +280,10 @@
       
       </div>
     </section>
-  </div>
+  </div>-->
 
 
-  <!-- CERTIFICATIONS Section -->
-  <div class="certification-page">
-    <section class="certification">
-        <div class="global-wrapper">
-      <p class="section-title">My Certification</p>
-      <hr class="divider" />
-
-      <div class="expertise-container">
-        <div class="expertise-card">
-          <div class="certification-content">
-            <img src="images/python-badge.png" alt="">
-            <div class="certification-text">
-              <p class="certification-header">IT Specialist - Python</p>
-              <p>Issued by Certiport</p>
-              <p>Date Issued: July 14, 2024</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="expertise-card">
-          <div class="certification-content">
-           <img src="images/pmi-badge.png" alt="">
-           <div class="certification-text">
-              <p class="certification-header">PMI Project Management Ready</p>
-              <p>Issued by PMI</p>
-              <p>Date Issued: March 19, 2025</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="expertise-card">
-          <div class="certification-content">
-           <img src="images/devnet-badge.png" alt="">
-           <div class="certification-text">
-              <p class="certification-header">DevNet Associate</p>
-              <p>Issued by Cisco</p>
-              <p>Date Issued: January 15, 2025</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-    </section>
-  </div>
-
- <footer class="footer">
+ <footer class="footer" id="contact">
   <div class="footer-container">
   <div class="footer-left">
     <p class="footer-header">Have any project idea in your mind? Let's make it happen!</p>
@@ -256,10 +301,14 @@
   <div class="footer-right">
     <p class="social-title">SOCIALS</p>
     <div class="social-icons">
-      <a href="https://www.linkedin.com/in/kristianne-gabas-993a842a1/" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
-      <a href="https://www.facebook.com/keigabas/" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
-      <a href="https://www.instagram.com/khgabas/" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
-      <a href="https://github.com/yogurtshaked" class="social-icon"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/kristianne-gabas-993a842a1/" class="social-icon" target="_blank" 
+   rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="https://www.facebook.com/keigabas/" class="social-icon" target="_blank" 
+   rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/khgabas/" class="social-icon" target="_blank" 
+   rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://github.com/yogurtshaked" class="social-icon" target="_blank" 
+   rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
     </div>
   </div>
   </div>
