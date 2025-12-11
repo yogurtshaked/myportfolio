@@ -295,7 +295,6 @@ body {
   justify-self: center; 
   width: 45%;
   transform: rotate(-1deg);
-  top: -20px;
 }
 
 .bg-img {
@@ -315,6 +314,10 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.expertise-card3 .expertise-inner{
+  padding: 2rem;
 }
 
 .expertise-content h3 {
@@ -616,7 +619,7 @@ body {
   flex-direction: column; 
   align-items: center;
   text-align: center;
-  width: 40px; 
+  width: 50px; 
   cursor: pointer;
 }
 
@@ -687,18 +690,16 @@ body {
 
   
 .expertise-container {
-    grid-template-columns: repeat(1, 1fr); /* 2 columns */
-    grid-template-rows: auto auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
   }
 
   .expertise-card1 {
     transform: rotate(3deg);
-    bottom: -20px;
   }
 
   .expertise-card2 {
     transform: rotate(-4deg);
-    top: -20px;
   }
 
   .expertise-card3 {
@@ -706,7 +707,6 @@ body {
     justify-self: center;
     width: 90%;
     transform: rotate(-1deg);
-    top: -20px;
   }
 
   .expertise-card3 .expertise-inner {
