@@ -330,7 +330,7 @@ body {
 
 .expertise-content p {
   font-family: "book";
-  text-align:justify;
+  text-align:left;
   font-size: 1.5rem;
   line-height: 1.6;
 }
@@ -532,12 +532,12 @@ body {
 }
 
 /* Tablets / medium screens */
-@media (max-width: 1080px) {
+@media (max-width: 1280px) {
   .body-wrapper {
-    padding: 0 80px;
+    padding: 0 180px;
   }
   .navbar {
-    width: 80%;         
+    width: 70%;         
   }
   .navbar-container {
     flex-direction: row;
@@ -631,9 +631,188 @@ body {
 }
 }
 
+@media (max-width: 1024px) {
+  .body-wrapper{
+    padding: 0 80px;
+  }
+
+  .navbar {
+    width: 85%;         
+  }
+
+  .expertise-content h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.2rem;
+}
+
+.expertise-content p {
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+}
+
+  .skill {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  text-align: center;
+  width: 50px; 
+  cursor: pointer;
+}
+
+.skill img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.skill p {
+  font-size: 1.2rem;
+  margin: 0;
+}
+}
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
+  .body-wrapper,
+  .navbar {
+    padding: 0 30px;
+  }
+
+  .navbar-container {
+    flex-direction: row;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .nav-links {
+    gap: 1.2rem;
+  }
+  .nav-links,
+  .linkedin-btn {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .about {
+    padding: 4rem 0;
+  }
+
+  .about-content {
+    flex-direction:column-reverse;
+    text-align: center;
+  }
+  
+  .about-img {
+    width: 100%;
+    max-height: 480px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-img img {
+    width: 100% !important;
+    max-width: 70% !important; 
+    height: 100% !important;
+    max-height: 800px;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  .black-line {
+  margin-bottom: 25px;
+}
+
+.expertise-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .expertise-card1,
+  .expertise-card2,
+  .expertise-card3 {
+    width: 100%;     
+    padding: 0 1.5rem;   
+    transform: rotate(0); 
+    top: 0; bottom: 0; 
+  }
+
+  .expertise-card3 .expertise-inner {
+    padding: 3rem;  
+  }
+
+  .expertise-card1 {
+    transform: rotate(3deg);
+  }
+
+  .expertise-card2 {
+    transform: rotate(-4deg);
+  }
+
+  .expertise-card3 {
+    transform: rotate(-1deg);
+  }
+
+
+  .expertise-container,
+  .experience-container {
+    flex-direction: column;
+  }
+
+  .expertise-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.2rem;
+}
+
+.expertise-content p {
+  font-size: 1.8rem;
+  line-height: 1.4rem;
+}
+
+.skills-row {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+  align-items: center; 
+  margin-top: 30px;
+  gap: 0.5rem; 
+}
+
+.skill {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  text-align: center;
+  width: 50px; 
+  cursor: pointer;
+}
+
+.skill img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.skill p {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+
+  .project-title {
+    width: 85%;
+    font-size: 1.4rem;
+  }
+
+  .project-images img {
+    width: 40%;
+  }
+}
+
+@media (max-width: 480px) {
   .body-wrapper,
   .navbar {
     padding: 0 30px;
