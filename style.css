@@ -329,7 +329,6 @@ body {
   font-family: "book";
   text-align:justify;
   font-size: 1.5rem;
-
   line-height: 1.6;
 }
 
@@ -634,7 +633,6 @@ body {
 }
 
 
-
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .body-wrapper,
@@ -686,6 +684,7 @@ body {
     border-radius: 20px;
   }
 
+
   
 .expertise-container {
     grid-template-columns: repeat(1, 1fr); /* 2 columns */
@@ -705,7 +704,7 @@ body {
   .expertise-card3 {
     grid-column: 1 / -1; 
     justify-self: center; 
-    width: 100%;
+    width: 90%;
     transform: rotate(-1deg);
     top: -20px;
   }
@@ -716,11 +715,12 @@ body {
   }
 
   .expertise-content h3 {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
 }
 
 .expertise-content p {
-  font-size: 1.4rem;
+  font-size: 1rem;
+  line-height: 1.2rem;
 }
 
 .skills-row {
@@ -729,7 +729,7 @@ body {
   justify-content: center;
   align-items: center; 
   margin-top: 30px;
-  gap: 0.6rem; 
+  gap: 0.3rem; 
 }
 
 .skill {
@@ -737,18 +737,18 @@ body {
   flex-direction: column; 
   align-items: center;
   text-align: center;
-  width: 70px; 
+  width: 40px; 
   cursor: pointer;
 }
 
 .skill img {
-  width: 70px;
-  height: 70px;
+  width: 45px;
+  height: 45px;
   object-fit: contain;
 }
 
 .skill p {
-  font-size: 1.4rem;
+  font-size: 1rem;
   margin: 0;
 }
 
