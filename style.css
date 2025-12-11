@@ -581,12 +581,10 @@ body {
 
   .expertise-card1 {
     transform: rotate(3deg);
-    bottom: -20px;
   }
 
   .expertise-card2 {
     transform: rotate(-4deg);
-    top: -20px;
   }
 
   .expertise-card3 {
@@ -594,7 +592,6 @@ body {
     justify-self: center; 
     width: 45%;
     transform: rotate(-1deg);
-    top: -20px;
   }
 
   .expertise-content h3 {
