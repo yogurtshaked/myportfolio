@@ -293,7 +293,7 @@ body {
 .expertise-card3 {
   grid-column: 1 / -1; 
   justify-self: center; 
-  width: 45%;
+  width: calc(50% - 1rem);
   transform: rotate(-1deg);
 }
 
@@ -345,7 +345,7 @@ body {
   justify-content: center;
   align-items: center; 
   margin-top: 30px;
-  gap: 1rem; 
+  gap: 1.2rem; 
 }
 
 .skill {
@@ -578,6 +578,7 @@ body {
     grid-template-columns: repeat(2, 1fr); /* 2 columns */
     grid-template-rows: auto auto;
   }
+  
 
   .expertise-card1 {
     transform: rotate(3deg);
@@ -588,9 +589,7 @@ body {
   }
 
   .expertise-card3 {
-    grid-column: 1 / -1; 
     justify-self: center; 
-    width: 45%;
     transform: rotate(-1deg);
   }
 
@@ -693,6 +692,19 @@ body {
     grid-template-rows: auto;
   }
 
+  .expertise-card1,
+  .expertise-card2,
+  .expertise-card3 {
+    width: 100%;     
+    padding: 0 1.5rem;   
+    transform: rotate(0); 
+    top: 0; bottom: 0; 
+  }
+
+  .expertise-card3 .expertise-inner {
+    padding: 3rem;  
+  }
+
   .expertise-card1 {
     transform: rotate(3deg);
   }
@@ -702,15 +714,9 @@ body {
   }
 
   .expertise-card3 {
-    grid-column: 1 / -1; 
-    justify-self: center;
-    width: 90%;
     transform: rotate(-1deg);
   }
 
-  .expertise-card3 .expertise-inner {
-  padding: 1.2rem;
-}
 
   .expertise-container,
   .experience-container {
