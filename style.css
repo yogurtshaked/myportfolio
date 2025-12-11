@@ -684,8 +684,10 @@ body {
     border-radius: 20px;
   }
 
+  .black-line {
+  margin-bottom: 15px;
+}
 
-  
 .expertise-container {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
