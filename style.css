@@ -43,6 +43,10 @@
   font-family: anthomono;
   src: url(fonts/antho-mono.otf);
 }
+@font-face {
+  font-family: geistpixel;
+  src: url(fonts/geist-pixel.ttf);
+}
 
 :root {
     /* Primary */
@@ -167,8 +171,27 @@ html {
   transition: transform 0.5s ease;
 }
 
-.logo img:hover {
-  transform: rotate(7deg) scale(1.1);
+.logo {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  font-family: "geistpixel";
+  font-weight: 600;
+  text-decoration: none;
+  line-height: 0.9;
+  color: var(--color-pink);
+}
+
+.logo span:first-child {
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.logo span:last-child {
+  font-weight: 400;
+}
+.logo span {
+  letter-spacing: -0.02em;
 }
 
 /* ========================== HOME SECTION ========================== */
@@ -206,10 +229,6 @@ html {
   transition: transform 0.5s;
 }
 
-.home-text img:hover{
-  transform: scale(1.1) rotate(-4deg);
-}
-
 .home-text h1 {
   font-family: "tasamed";
   width: 100%;
@@ -217,14 +236,15 @@ html {
   color: var(--color-brown-dark);
   font-size: 4.4rem;
   line-height: 1;
+  letter-spacing: -0.5px;
   margin-bottom: 1rem;
 }
 
 .highlight-font {
   /*font-family: "gaegu";
-  font-size: 5.2rem;*/
+  font-size: 5.2rem;
+  word-spacing: -0.8rem;*/
   color: var(--color-brown-dark);
-  word-spacing: -0.8rem;
 }
 
 .home-text p{
@@ -831,41 +851,36 @@ html {
     padding: 0 180px;
   }
   .navbar {
-    width: 70%;         
+    width: 100%;        
   }
   .navbar-container {
-    flex-direction: row;
-    gap: 1rem;
-    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
   .nav-links {
     gap: 1.2rem;
   }
-  .nav-links,
-  .resume-btn {
-    display: none;
-  }
-  .hamburger {
-    display: flex;
-  }
+  
   .home-content {
     gap: 1.5rem;
   }
-  .home-text h1{
-    font-size: 1rem;
-  }
   
-  .home-text,
-  .home-img {
-    flex: 1 1 100%;
-  }
-
   .home-text img {
     max-width: 300px;
   }
 
   .home-img img {
     max-width: 350px;
+  }
+
+  .project-year {
+    font-size: 1rem;
+  }
+
+  .project-title {
+    width: 100%;
+    font-size: 1.2rem;
   }
 
   .expertise-container {
@@ -877,27 +892,18 @@ html {
   font-size: 1.4rem;
   }
 
-  .expertise-content p {
+  .expertise-content p, .skills-content p {
     font-size: 1rem;
   }
 
-  .skills-row {
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: center;
-    align-items: center; 
-    margin-top: 30px;
-    gap: 0.8rem; 
+  .expertise-content h3 {
+    font-size: 1rem;
   }
 
-  .skill {
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    text-align: center;
-    width: 50px; 
-    cursor: pointer;
+  .expertise-text p, .skills-content p {
+    font-size: 0.9rem;
   }
+
 
   .skill img {
     width: 50px;
@@ -909,6 +915,29 @@ html {
     font-size: 1rem;
     margin: 0;
   }
+
+  .project-cards {
+    gap: 1rem 1rem;
+    max-width: 650px;
+  }
+
+  .expertise-container {
+    max-width: 650px;
+    padding: 0rem;
+  }
+
+  .certifications-card {
+    max-width: 650px;
+    gap: 2rem;
+    padding: .8rem 2.5rem;
+  }
+
+  .contact-container {
+    padding: 2rem;
+    gap: .6rem;
+    max-width: 650px;
+  }
+
 }
 
 /* ========================== MOBILE NAVBAR ========================== */
@@ -946,7 +975,7 @@ html {
 .mobile-menu a {
   text-decoration: none;
   color: #111;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
 }
 
 .mobile-menu a:hover {
@@ -963,24 +992,27 @@ html {
     width: 85%;         
   }
 
+  .expertise-container {
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: auto auto;
+  }
+
   .expertise-content h3 {
-    font-size: 1.6rem;
-    margin-bottom: 0.2rem;
+  font-size: 1.4rem;
   }
 
-  .expertise-content p {
-    font-size: 1.2rem;
-    line-height: 1.2rem;
+  .expertise-content p, .skills-content p {
+    font-size: 1rem;
   }
 
-    .skill {
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    text-align: center;
-    width: 50px; 
-    cursor: pointer;
+  .expertise-content h3 {
+    font-size: 1rem;
   }
+
+  .expertise-text p, .skills-content p {
+    font-size: 0.9rem;
+  }
+
 
   .skill img {
     width: 50px;
@@ -989,9 +1021,10 @@ html {
   }
 
   .skill p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 0;
   }
+
 }
 
 /* ------------- Mobile ------------- */
@@ -1228,6 +1261,7 @@ html {
     }
 
   .expertise-container {
+    gap: 0.8rem;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
   }
@@ -1240,6 +1274,7 @@ html {
   .card-number{
     font-size: 1rem;
   }
+  
 
   .expertise-content h3 {
     font-size: 1rem;
@@ -1253,10 +1288,14 @@ html {
 
   .skills-row {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     width: 100%;
     gap: 0.5rem;
-    margin-top: 30px;
+    margin-top: 6px;
+  }
+
+  .skills-content > p {
+    margin: 0;
   }
 
   .skill {
@@ -1281,16 +1320,23 @@ html {
     width: 100%;
     font-size: 1rem;
   }
-
   
   .project-year, .project-description, .project-tech {
     font-size: 0.9rem;
   }
 
-  .project-images img {
-    width: 40%;
+  .project-images {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
   }
 
+  .project-images img {
+    flex: 1;
+    min-width: 0;
+    height: auto;
+    object-fit: contain;
+  }
   .certifications-container {
     width: 100%;
     gap: 1rem;
