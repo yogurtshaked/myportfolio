@@ -14,17 +14,72 @@ document.addEventListener("DOMContentLoaded", () => {
             mobileMenu.style.display === "flex" ? "none" : "flex";
         });
       }
+
+      // Sliding pill indicator
+      const nav = document.querySelector(".nav-links");
+      const highlight = document.querySelector(".nav-highlight");
+
+      if (nav && highlight) {
+        const links = nav.querySelectorAll("li > a");
+
+        function movePill(link) {
+          const linkRect = link.getBoundingClientRect();
+          const navRect = nav.getBoundingClientRect();
+
+          highlight.style.width = `${linkRect.width}px`;
+          highlight.style.transform =
+            `translate(${linkRect.left - navRect.left}px, -50%)`;
+
+          highlight.style.opacity = "1";
+        }
+
+        // Hover
+        links.forEach(link => {
+          link.addEventListener("mouseenter", () => {
+            movePill(link);
+          });
+        });
+
+
+        // Active section on scroll
+        const sections = document.querySelectorAll("section[id]");
+
+        function updateActiveOnScroll() {
+        let currentId = "";
+
+        sections.forEach(section => {
+          const rect = section.getBoundingClientRect();
+
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            currentId = section.id;
+          }
+        });
+
+        // Hide pill on landing section
+        if (currentId === "about" || currentId === "") {
+          highlight.style.opacity = "0";
+          return;
+        }
+
+        const matchingLink = [...links].find(
+          link => link.getAttribute("href") === `#${currentId}`
+        );
+
+        if (matchingLink) {
+          movePill(matchingLink);
+        }
+      }
+
+        window.addEventListener("scroll", updateActiveOnScroll);
+
+
+        nav.addEventListener("mouseleave", () => {
+          highlight.style.opacity = "0";
+        });
+      }
     });
 });
 
-const scrollContainer = document.querySelector('.skills-scroll');
-
-scrollContainer.parentElement.addEventListener('mouseenter', () => {
-  // pause by reducing animation speed gradually
-  scrollContainer.style.animationPlayState = 'paused';
-});
-
-scrollContainer.parentElement.addEventListener('mouseleave', () => {
-  // resume smoothly
-  scrollContainer.style.animationPlayState = 'running';
+window.addEventListener("load", () => {
+  lucide.createIcons();
 });
