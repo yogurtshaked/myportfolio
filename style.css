@@ -94,6 +94,95 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Whole page fade in */
+.body-wrapper {
+  animation: pageFade 1s ease forwards;
+}
+
+@keyframes pageFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* Navbar comes first */
+header {
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+  animation-delay: 0.3s;
+  z-index: 1000;
+}
+
+
+/* Home section content */
+.home h1 {
+  opacity: 0;
+  animation: fadeIn  0.8s ease forwards;
+  animation-delay: 1s;
+}
+
+.home p {
+  opacity: 0;
+  animation: fadeIn  0.8s ease forwards;
+  animation-delay: 0.8s;
+}
+
+.home img {
+  opacity: 0;
+  animation: fadeIn  0.8s ease forwards;
+  animation-delay: 0.6s;
+}
+
+.home-buttons{
+  opacity: 0;
+  animation: fadeIn  0.8s ease forwards;
+  animation-delay: 1.2s;
+}
+.scroll-down{
+  opacity: 0;
+  animation: fadeIn  0.8s ease forwards;
+  animation-delay: 1.4s;
+}
+
+.certifications,
+.expertise,
+.projects,
+.contact {
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.certifications {
+  animation-delay: 1.8s;
+}
+
+.expertise {
+  animation-delay: 1.6s;
+}
+
+.projects {
+  animation-delay: 1.4s;
+}
+
+.contact {
+  animation-delay: 2s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 /* ========================== NAVIGATION BAR ========================== */
 .navbar-container {
   width: 100%;
@@ -248,7 +337,7 @@ html {
 }
 
 .home-text p{
-  font-family: "Geist Mono", monospace;
+  font-family: "geistpixel";
   font-size: 1rem;
   color: #59382C;
 }
@@ -291,7 +380,6 @@ html {
 .home-buttons {
   display: flex;
   justify-content: center;
-  display: none;
   gap: 1.5rem; 
 }
 
@@ -465,7 +553,7 @@ html {
 .section-title {
   font-family: "anthoreg";
   letter-spacing: -1px;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: bold;
   color: var(--color-brown);
   margin: 0; 
@@ -1034,25 +1122,33 @@ html {
     padding: 0 30px;
   }
 
-  .navbar-container {
-    flex-direction: row;
-    gap: 1rem;
-    text-align: center;
+  .navbar {
+    width: 100%;        
   }
-
+  .navbar-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
   .nav-links {
     gap: 1.2rem;
   }
-  .nav-links{
-    display: none;
+  
+  .home-content {
+    gap: 1.5rem;
   }
+  
+  .home-text img {
+    max-width: 300px;
+  }
+
+  .home-img img {
+    max-width: 350px;
+  }
+
 
   .logo img {
     height: 20px;
-  }
-
-  .hamburger {
-    display: flex;
   }
 
   .home {
@@ -1065,7 +1161,7 @@ html {
   }
 
   .home-text h1{
-    font-size: 1rem;
+    font-size: 3.2rem;
   }
   
   .home-text p{
