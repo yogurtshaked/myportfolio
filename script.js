@@ -14,6 +14,15 @@ document.addEventListener("DOMContentLoaded", () => {
             mobileMenu.style.display === "flex" ? "none" : "flex";
         });
       }
+      const navbar = document.querySelector(".navbar");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
 
       // Sliding pill indicator
       const nav = document.querySelector(".nav-links");
@@ -83,3 +92,5 @@ document.addEventListener("DOMContentLoaded", () => {
 window.addEventListener("load", () => {
   lucide.createIcons();
 });
+
+
