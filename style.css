@@ -948,134 +948,60 @@ header {
   transition: transform 0.3s ease;
 }
 
-.certifications-carousel {
-  width: 100%;
-  max-width: 700px;
-  margin: 0 auto;
-
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-
-  position: relative;
-}
-
-
-/* ==============================
-   CARD CONTAINER
-================================= */
+/* ============================== CERTIFICATIONS ==============================*/
 
 .certifications-container {
+  /* 3 cards visible: 3 × 200px card + 2 × 2rem gaps between them */
   width: 100%;
-
+  max-width: calc(200px * 3 + 2rem * 2);
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
-
+  align-items: stretch; /* lets cards match height */
   gap: 2rem;
+  position: relative;
 
+  /* carousel/swipe behavior */
   overflow-x: auto;
-  overflow-y: hidden;
-
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 
+  /* hide scrollbar (optional, keeps it looking clean) */
   scrollbar-width: none;
-
-  padding: 1rem 0.2rem;
 }
-
 .certifications-container::-webkit-scrollbar {
   display: none;
 }
 
-
-/* ==============================
-   CERTIFICATION CARD
-================================= */
-
 .certifications-card {
   position: relative;
-
-  /* Exactly 3 cards fit */
-  flex: 0 0 calc((100% - 4rem) / 3);
-
-  height: 260px;
-
+  flex: 0 0 200px;      /* fixed width, won't shrink/grow */
+  width: 200px;
+  height: 260px;         /* fixed height — same for every card */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-
   gap: 1rem;
-
-  padding: 1rem;
-
+  padding: 0.8rem 1rem;
   background: white;
+  backdrop-filter: blur(12px);
+  border-radius: 5px;
 
-  border-radius: 10px;
-
-  box-sizing: border-box;
-
+  /* snap each card into place when swiping */
   scroll-snap-align: start;
-
-  cursor: pointer;
-
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  scroll-snap-stop: always; /* forces one-card-at-a-time, no skipping past two */
 }
-
-
-/* Hover */
-
-.certifications-card:hover {
-  transform: translateY(-4px);
-
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-}
-
-
-/* ==============================
-   BADGE IMAGE
-================================= */
-
-.certifications-card .certification-img {
-  position: relative;
-  z-index: 1;
-
-  width: 75px;
-  height: 75px;
-
-  padding: 0.4rem;
-
-  object-fit: contain;
-
-  border-radius: 50px;
-
-  border: 1px solid #dfdfdf;
-
-  box-sizing: border-box;
-}
-
-
-/* ==============================
-   DESCRIPTION
-================================= */
 
 .cert-description {
   display: flex;
   flex-direction: column;
-
   text-align: center;
   align-items: center;
-
   gap: 0.4rem;
-
-  flex: 1;
-
+  flex: 1; /* fills remaining space so link stays pinned to bottom */
   justify-content: center;
-
-  width: 100%;
+  overflow: hidden; /* long titles won't blow out card height */
 }
 
 .cert-description h1,
@@ -1084,116 +1010,63 @@ header {
   line-height: 1.2;
 }
 
+.certifications-card .certification-img {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  height: 75px;
+  width: 75px;
+  padding: 0.4rem;
+  border-radius: 50px;
+  border: 1px solid #dfdfdf;
+}
+
 .certifications-card h1 {
   font-size: 1rem;
 }
 
 .cert-issuer {
+  margin: 0;
   font-size: 0.8rem;
   color: #4d4d4d;
 }
 
-.cert-date {
-  margin: 0;
-  font-size: 0.8rem;
-  color: #6c6c6c;
-}
-
-
-/* ==============================
-   VERIFY BUTTON
-================================= */
-
 .cert-link {
+  flex-shrink: 0;
+  margin-top: auto; /* pins link to bottom regardless of description length */
   position: relative;
-
+  overflow: hidden;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   gap: 5px;
-
+  text-decoration: none;
   padding: 0.4rem 0.9rem;
-
   background: #eeeeee;
   color: #838383;
-
   border-radius: 5px;
-
-  text-align: center;
-  text-decoration: none;
-
-  overflow: hidden;
-
-  transition:
-    background 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.cert-link:hover {
-  background: #e2e2e2;
-  color: #333;
-}
-
-.cert-link span {
-  position: relative;
-  z-index: 1;
-
-  font-size: 0.8rem;
-  font-weight: 500;
-
-  line-height: 1;
+  transition: transform 0.05s ease;
 }
 
 .certifications-card .verify-icon {
   width: 14px;
   height: 14px;
-
   display: block;
-
-  transition: transform 0.2s ease;
 }
 
-.cert-link:hover .verify-icon {
-  transform: translateX(3px);
+.cert-link span {
+  position: relative;
+  z-index: 1;
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1;
 }
-
-
-/* ==============================
-   CAROUSEL BUTTONS
-================================= */
-
-.carousel-btn {
-  flex-shrink: 0;
-
-  width: 35px;
-  height: 35px;
-
-  border: none;
-  border-radius: 50%;
-
-  background: #eeeeee;
-  color: #555;
-
-  cursor: pointer;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease;
+.certifications-container {
+  cursor: grab;
 }
-
-.carousel-btn:hover {
-  background: #dddddd;
-  transform: scale(1.08);
-}
-
-.carousel-btn:active {
-  transform: scale(0.95);
+.certifications-container.dragging {
+  cursor: grabbing;
+  scroll-snap-type: none; /* disable snapping mid-drag so it feels smooth */
 }
 /* ============================== contact ==============================*/
 .contact .copyright{
