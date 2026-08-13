@@ -948,133 +948,253 @@ header {
   transition: transform 0.3s ease;
 }
 
-/* ============================== CERTIFICATIONS ==============================*/
-.certifications-container {
+.certifications-carousel {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 700px;
   margin: 0 auto;
-  gap: 2rem;
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
   position: relative;
 }
 
-.certifications-card::before {
-  content: "";
-  position: absolute;
 
-  left: calc(2.5rem + 30px); /* left padding + half of badge width */
-  top: -1rem;
-  bottom: -1rem;
+/* ==============================
+   CARD CONTAINER
+================================= */
 
-  width: 2px;
-  background: var(--color-grey);
-  z-index: 0;
+.certifications-container {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+
+  gap: 2rem;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+
+  scrollbar-width: none;
+
+  padding: 1rem 0.2rem;
 }
+
+.certifications-container::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* ==============================
+   CERTIFICATION CARD
+================================= */
 
 .certifications-card {
   position: relative;
-  width: 100%;
-  max-width: 700px;
+
+  /* Exactly 3 cards fit */
+  flex: 0 0 calc((100% - 4rem) / 3);
+
+  height: 260px;
+
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 2rem;
-  padding: .8rem 2.5rem;
-  /*background: rgba(222, 221, 221, 0.85);
-  backdrop-filter: blur(12px);
-  border-radius: 13px;*/
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  padding: 1rem;
+
+  background: white;
+
+  border-radius: 10px;
+
+  box-sizing: border-box;
+
+  scroll-snap-align: start;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
+
+
+/* Hover */
+
+.certifications-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ==============================
+   BADGE IMAGE
+================================= */
+
+.certifications-card .certification-img {
+  position: relative;
+  z-index: 1;
+
+  width: 75px;
+  height: 75px;
+
+  padding: 0.4rem;
+
+  object-fit: contain;
+
+  border-radius: 50px;
+
+  border: 1px solid #dfdfdf;
+
+  box-sizing: border-box;
+}
+
+
+/* ==============================
+   DESCRIPTION
+================================= */
 
 .cert-description {
   display: flex;
   flex-direction: column;
-  text-align: left;
-  gap: 0.1rem; 
+
+  text-align: center;
+  align-items: center;
+
+  gap: 0.4rem;
+
+  flex: 1;
+
+  justify-content: center;
+
+  width: 100%;
 }
 
 .cert-description h1,
 .cert-description p {
   margin: 0;
-  line-height: 1.4;
-}
-.certifications-card img {
-  position: relative;
-  z-index: 1;
-
-  height: 65px;
-  width: 65px;
-  padding: .35rem;
-  background: var(--color-grey);
-  border-radius: 50%;
+  line-height: 1.2;
 }
 
-.certifications-card:first-child::before {
-  top: 30px; /* starts at badge center */
+.certifications-card h1 {
+  font-size: 1rem;
 }
 
-.certifications-card:last-child::before {
-  bottom: 30px; /* ends at badge center */
-}
-
-.certifications-card h1{
-  font-size: 1.1rem;
+.cert-issuer {
+  font-size: 0.8rem;
+  color: #4d4d4d;
 }
 
 .cert-date {
   margin: 0;
-  font-size: .8rem;
-  color: #525252;
+  font-size: 0.8rem;
+  color: #6c6c6c;
 }
 
-.cert-issuer {
-  margin: 0;
-  font-size: .9rem;
-  color: #525252;
-}
+
+/* ==============================
+   VERIFY BUTTON
+================================= */
 
 .cert-link {
   position: relative;
-  overflow: hidden;
-  margin-left: auto;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  padding: 0.4rem 0.9rem;
+
+  background: #eeeeee;
+  color: #838383;
+
+  border-radius: 5px;
+
+  text-align: center;
   text-decoration: none;
-  padding: 0.5rem 0.8rem;
-  background: #090909;
-  color: rgb(248, 246, 246);
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
-  border-radius: 15px;
-  transition: transform 0.05s ease;
-}
 
-.cert-link::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at center bottom,
-    #5a5a5a 0%,
-    #000000 80%
-  );  
-  opacity: 0;
-  transition: opacity 0.6s ease, transform 0.6s ease;
-  z-index: 0;
-}
+  overflow: hidden;
 
-.cert-link:hover::before {
-  opacity: 1;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .cert-link:hover {
-  transform: scale(1.01);
+  background: #e2e2e2;
+  color: #333;
 }
 
-.cert-link p {
+.cert-link span {
   position: relative;
   z-index: 1;
-  font-size: 0.7rem;
+
+  font-size: 0.8rem;
   font-weight: 500;
+
   line-height: 1;
 }
 
+.certifications-card .verify-icon {
+  width: 14px;
+  height: 14px;
+
+  display: block;
+
+  transition: transform 0.2s ease;
+}
+
+.cert-link:hover .verify-icon {
+  transform: translateX(3px);
+}
+
+
+/* ==============================
+   CAROUSEL BUTTONS
+================================= */
+
+.carousel-btn {
+  flex-shrink: 0;
+
+  width: 35px;
+  height: 35px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #eeeeee;
+  color: #555;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.carousel-btn:hover {
+  background: #dddddd;
+  transform: scale(1.08);
+}
+
+.carousel-btn:active {
+  transform: scale(0.95);
+}
 /* ============================== contact ==============================*/
 .contact .copyright{
   text-align: center;

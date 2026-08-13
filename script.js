@@ -136,6 +136,77 @@ window.addEventListener("load", () => {
   }, 600);
 });
 
+
+const carousel = document.querySelector('.certifications-container');
+const cards = document.querySelectorAll('.certifications-card');
+
+const nextButton = document.querySelector('.carousel-next');
+const prevButton = document.querySelector('.carousel-prev');
+
+
+function getCardWidth() {
+  const card = cards[0];
+
+  if (!card) return 0;
+
+  const gap = parseFloat(
+    getComputedStyle(carousel).gap
+  );
+
+  return card.offsetWidth + gap;
+}
+
+
+/* Next */
+
+nextButton.addEventListener('click', () => {
+
+  carousel.scrollBy({
+    left: getCardWidth(),
+    behavior: 'smooth'
+  });
+
+});
+
+
+/* Previous */
+
+prevButton.addEventListener('click', () => {
+
+  carousel.scrollBy({
+    left: -getCardWidth(),
+    behavior: 'smooth'
+  });
+
+});
+
+
+/* Click a card */
+
+cards.forEach((card) => {
+
+  card.addEventListener('click', (event) => {
+
+    /*
+      Don't trigger carousel movement
+      when clicking the Verify link.
+    */
+
+    if (event.target.closest('.cert-link')) {
+      return;
+    }
+
+    card.scrollIntoView({
+      behavior: 'smooth',
+      inline: 'start',
+      block: 'nearest'
+    });
+
+  });
+
+});
+
+
 // ==========================================
 // KINETIC GRID
 // Originkit-inspired vanilla JS version
