@@ -5,18 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kristianne Gabas | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"/>
   <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.25/dist/lenis.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Geist+Pixel:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div class="shader-gradient"></div>
   
   <!-- Navigation Bar -->
   <div class="body-wrapper">
+    <div class="global-wrapper">
     <header>
       <div id="navbar"></div>
     </header>
@@ -24,27 +27,49 @@
 
     <!-- ============================ HOME SECTION ============================ -->
     <section class="home" id="home">
-      <div class="global-wrapper">
         <div class="home-content">
           
           <div class="home-text">
-            <img src="images/kei.png">
-            <p>Welcome to my portfolio!</p>
-            <h1>
-              <span>I MOVE</span>
-              <span>PIXELS</span>
-              <span>UNTIL</span>
-              <span>EVERYTHING</span>
-              <span>FEELS</span>
-              <span class="highlight-font">JUST RIGHT.</span>
-            </h1>
+            <div class="profile-header">
+              <canvas id="kinetic-grid"></canvas>
+              <img src="images/kei-profile.JPG" class="profile-pic">
+            </div>
+             <div class="intro-text">
+              <h1>Hello! I'm <span class="highlight-font">Khaye Gabas</span>.</h1>
+              <p>
+                <!--<span>I move pixels until everything feels</span>
+                <span class="highlight-font">just right.</span>-->
+                <span>I'm an aspiring UI/UX Designer and Software Engineer based in Manila, 
+                  driven by a constant curiosity to learn and explore new things.
+                I’m passionate about designing intuitive experiences that are both 
+                functional and visually engaging.</span>
+              </p>
+              </div> 
             <div class="home-buttons">
-              <a href="https://drive.google.com/file/d/1_RTWNmz-03wm1loklxNeVS4SY2s47NCZ/view?usp=sharing" 
-                  class="resume-btn" target="_blank" rel="noopener noreferrer">View Resume</a>
-              <a href="#contact" class="contact-btn" rel="noopener noreferrer">Contact Me</a>
+
+              <a
+                href="https://drive.google.com/file/d/1_RTWNmz-03wm1loklxNeVS4SY2s47NCZ/view?usp=sharing"
+                class="resume-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>View Resume</span>
+                <img src="images/resume-icon.svg" alt="">
+                
+              </a>
+
+              <a
+                href="#contact"
+                class="contact-btn"
+              >
+              <span>Contact Me</span>
+                <img src="images/contact-icon.svg" alt="">
+                
+              </a>
+
             </div>
             <script src="https://animatedicons.co/scripts/embed-animated-icons.js"></script>
-            <a href="#projects" class="scroll-down">
+            <!--<a href="#projects" class="scroll-down">
               <animated-icons
                 src="https://animatedicons.co/get-icon?name=Arrow%20Bottom&style=minimalistic&token=3ecd5785-5b2e-494c-9001-7748c60276bd"
                 trigger="loop"
@@ -52,41 +77,42 @@
                 height="42"
                 width="42">
               </animated-icons>
-            </a>
+            </a>-->
           </div>
         </div>
-      </div>
+
     </section>
+
+    <div class="section-divider"></div>
 
     <!-- ============================ PROJECTS SECTION ============================ -->
     <div class="projects-page">
       <section class="projects" id="projects">
-        <div class="global-wrapper">
+        
           <p class="section-title">Featured Projects</p>
           <!-- <img src="images/black-line.png" alt="" class="black-line">-->
           <div class="project-cards"> 
             <a href="https://drive.google.com/drive/folders/14dBJShjwb-2rmHZCh45LYRgde37WzJMJ?usp=sharing" class="project-link" target="_blank" 
                     rel="noopener noreferrer">
             <div class="project-card">
-              <div class="project-images">
-                <img src="images/chloro/chloro1.png" alt="mockup 1">
-                <img src="images/chloro/chloro2.png" alt="mockup 2">
-                <img src="images/chloro/chloro3.png" alt="mockup 3">
-                <img src="images/chloro/chloro4.png" alt="mockup 4">
+              <div class="project-images" chloro-images>
+                <img src="images/chloro/chloro.png" alt="mockup 1">
+                
               </div>
+               <div class="project-content">
               <div class="project-title-container">
-                <h2 class="project-title">Designed and developed a mobile application for monitoring hydroponic lettuce growth</h2>
-                <p class="project-year">Sep 2024 – July 2025</p>
-                <p class="project-description">Chloro is a monitoring and forecasting application that tracks the 
-                              quality of hydroponically grown lettuce and identifies the 
-                              best time to harvest. Chloro optimizes the Random Forest 
-                              Regressor, which analyzes nutrient 
-                              conditions of hydroponic crops such as pH level, TDS, temperature, and humidity.</p>
+                <h2 class="project-title">Chloro</h2>
+                <!--<p class="project-year">Sep 2024 – July 2025</p>-->
+                <p class="project-description">A monitoring application that tracks the 
+                              quality of hydroponically grown lettuce and forecasts the 
+                              best time to harvest. 
+                            </p>
                 </div>
                 <div class="project-tech">
                   <p>Flutter/Dart</p>
                   <p>Supabase</p>
                   <p>Python</p>
+                </div>
                 </div>
             </div>
             </a>
@@ -94,49 +120,49 @@
             <a href="https://drive.google.com/drive/folders/1NTAuS8_hnNb6e2k790YPyFyV1UJaj--i?usp=sharing" class="project-link" 
             target="_blank" rel="noopener noreferrer">
               <div class="project-card">
-                <div class="project-images">
-                  <img src="images/gcode/login.png" alt="mockup 1">
-                  <img src="images/gcode/register.png" alt="mockup 2">
-                  <img src="images/gcode/songregister.png" alt="mockup 3">
-                  <img src="images/gcode/playlist.png" alt="mockup 4">
+                <div class="project-images gcode-images">
+                  <img src="images/gcode/gcode.png" alt="mockup 1">
+               
                 </div>
+                <div class="project-content">
                 <div class="project-title-container">
-                  <h2 class="project-title">Set up and integrated the Spotify API to retrieve song details directly from the app</h2>
-                  <p class="project-year">Oct 2024 - Dec 2024</p>
-                  <p class="project-description">GCode is a mobile application that allows users to organize and manage their 
-                    favorite songs in a personal repository. By integrating the Spotify API, the application retrieves 
-                    detailed song information and presents it through a clean, visually engaging interface.</p>
+                  <h2 class="project-title">GCode Tunes</h2>
+                  <!--<p class="project-year">Oct 2024 - Dec 2024</p>-->
+                  <p class="project-description">A mobile application that lets users organize and manage their 
+                    favorite songs in a personal repository. </p>
                 </div>
                 <div class="project-tech">
                   <p>SQL</p>
                   <p>Java</p>
                   <p>RESTful Web API</p>
                   </div>
+                  </div>
               </div>
             </a>
 
             <a href="siayanrock.html" class="project-link">
               <div class="project-card">
-                <div class="siayanrock-project">
-                  <img src="images/siayan/siayanrock_display.png" alt="mockup 1">
+                <div class="project-images siayan-images">
+                  <img src="images/siayan/siayanrock.png" alt="mockup 1">
                 </div>
                         
+                <div class="project-content">
                 <div class="project-title-container">
-                  <h2 class="project-title">Designed and developed the front-end interface of an unofficial hometel website</h2>
-                  <p class="project-year">SiayanRock – 2024</p>
-                  <p class="project-description">SiayanRock Hometel is a responsive website and online booking platform 
-                          designed for a hometel located in Batanes. It showcases the hometel’s rooms, services, and amenities 
-                          while providing visitors with essential information.</p>       
+                  <h2 class="project-title">Siayanrock Is. Hometel Website</h2>
+                  <!--<p class="project-year">SiayanRock – 2024</p>--->
+                  <p class="project-description">A responsive website and online booking platform 
+                          designed for a hometel located in Batanes. </p>       
                 </div>
                 <div class="project-tech">
                   <p>HTML/CSS</p>
                   <p>PHP</p>
                   <p>SQL</p>
+                </div>
                 </div> 
               </div>
             </a>
           </div>
-        </div>
+
       </section>
     </div>
 
@@ -145,7 +171,6 @@
   <!-- ============================ EXPERTISE SECTION ============================ -->
     <div class="expertise-page">
       <section class="expertise" id="services">
-        <div class="global-wrapper">
           <p class="section-title">What I Can Do</p>
           <!-- <img src="images/black-line.png" alt="" class="black-line">-->
           <!-- <hr class="divider" />-->
@@ -229,7 +254,7 @@
               </div>
             </div>
           </div>
-        </div>
+
       </section>
     </div>
 
@@ -238,7 +263,6 @@
   <!-- ============================== CERTIFICATIONS ============================== -->
     <div class="certifications-page">
       <section class="certifications" id="certifications">
-        <div class="global-wrapper">
           <p class="section-title">Certifications</p>
               <!-- <img src="images/black-line.png" alt="" class="black-line">-->
               <!-- <hr class="divider" />-->
@@ -308,12 +332,12 @@
                 </a>  
               </div>
           </div>
-        </div>
+
       </section>
     </div>
 
 <!-- ============================ contact SECTION ============================ -->
-    <contact class="contact" id="contact">
+    <section class="contact" id="contact">
       <div class="contact-container">
 
         <div class="contact-status">
@@ -349,8 +373,8 @@
         </div>
       </div>
       <!-- <p class="copyright">&copy; 2025 Kristianne Gabas. All rights reserved.</p>-->
-    </contact>
-
+    </section>
+</div>
   </div>
 
     <!-- ============================ SCRIPT SECTION ============================ -->
