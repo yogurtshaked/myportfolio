@@ -1494,7 +1494,8 @@ header {
   }
 
   .home {
-    min-height: 100svh;
+    min-height: 30svh;
+    padding: 4rem 0;
     display: flex;
     align-items: center;
   }
@@ -1515,7 +1516,7 @@ header {
 
   .home-text h1 {
     max-width: 400px;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
   .profile-header {
@@ -1558,7 +1559,7 @@ header {
   }
 
   .card-number{
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
   
   .expertise-content h3 {
@@ -1596,11 +1597,11 @@ header {
     justify-content: center;
     align-items: center;
     gap: 0.3rem;
-    padding: 0.1rem 0.5rem;
+    padding: 0.3rem 0.6rem;
     background: #f0f0f0a7;
     border: 1px solid #dedede;
     border-radius: 4px;
-    white-space: nowrap;
+
   }
 
   .skill img {
@@ -1614,10 +1615,8 @@ header {
     margin: 0;
     font-family: "Geist Mono";
     font-size: 0.8rem;           /* keeps skill text smaller */
-    line-height: 1rem;
     color: #575757;
     text-align: center;
-    white-space: nowrap;
     flex-shrink: 0;
   }
   
@@ -1630,16 +1629,18 @@ header {
     font-size: 0.9rem;
   }
 
+  .project-content{
+    padding: 1rem;
+  }
   .project-images {
     display: flex;
-    gap: 0.5rem;
     align-items: center;
+    justify-content: center;
   }
 
   .project-images img {
-    flex: 1;
-    min-width: 0;
-    height: auto;
+    width: auto;
+    height: 180px;
     object-fit: contain;
   }
   .certifications-container {
@@ -1654,7 +1655,7 @@ header {
     width: 100%;
     max-width: 100%;
     min-width: 0;
-    height: 180px;
+    height: 150px;
     box-sizing: border-box;
 
     /* Keep contents vertically aligned */
@@ -1695,11 +1696,11 @@ header {
   }
 
   .certifications-card h1 {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
 
   .cert-issuer {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
   }
 
   .cert-date {
