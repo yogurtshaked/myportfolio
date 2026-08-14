@@ -71,164 +71,6 @@
 }
 
 
-/*.shader-gradient {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  z-index: -1;
-
-
-  background:
-    radial-gradient(
-      ellipse 75% 60% at 25% 45%,
-      #C4B3BE 0%,
-      rgba(196, 179, 190, 0.95) 25%,
-      rgba(196, 179, 190, 0.5) 50%,
-      transparent 75%
-    ),
-    radial-gradient(
-      ellipse 70% 55% at 75% 55%,
-      #E1D7DD 0%,
-      rgba(225, 215, 221, 0.9) 30%,
-      rgba(225, 215, 221, 0.45) 55%,
-      transparent 75%
-    ),
-    linear-gradient(
-      135deg,
-      #C4B3BE,
-      #E1D7DD
-    );
-
-
-  filter: brightness(1.1);
-}
-
-
-.shader-gradient::before {
-  content: "";
-  position: absolute;
-  inset: -35%;
-
-  background:
-    radial-gradient(
-      ellipse 45% 35% at 25% 45%,
-      rgba(196, 179, 190, 1) 0%,
-      rgba(196, 179, 190, 0.7) 35%,
-      transparent 70%
-    ),
-    radial-gradient(
-      ellipse 50% 40% at 70% 35%,
-      rgba(225, 215, 221, 1) 0%,
-      rgba(225, 215, 221, 0.7) 35%,
-      transparent 70%
-    ),
-    radial-gradient(
-      ellipse 40% 45% at 55% 75%,
-      rgba(225, 215, 221, 0.8) 0%,
-      transparent 70%
-    );
-
-
-  filter: blur(50px);
-
-
-  transform: rotate(10deg) scale(1.15);
-
-  animation: shaderMovement 10s ease-in-out infinite alternate;
-}
-
-
-
-.shader-gradient::after {
-  content: "";
-  position: absolute;
-  inset: -30%;
-
-  background:
-    radial-gradient(
-      ellipse at 30% 25%,
-      rgba(255, 255, 255, 0.4),
-      transparent 30%
-    ),
-    radial-gradient(
-      ellipse at 70% 70%,
-      rgba(255, 255, 255, 0.2),
-      transparent 35%
-    );
-
-
-  mix-blend-mode: screen;
-  filter: blur(55px);
-
-  transform: rotate(50deg) scale(1.1);
-
-  animation: lightMovement 12s ease-in-out infinite alternate;
-}
-
-@keyframes shaderMovement {
-  0% {
-    transform:
-      translate(-8%, -2%)
-      rotate(10deg)
-      scale(1.15);
-  }
-
-  25% {
-    transform:
-      translate(2%, -5%)
-      rotate(13deg)
-      scale(1.2);
-  }
-
-  50% {
-    transform:
-      translate(8%, 2%)
-      rotate(16deg)
-      scale(1.25);
-  }
-
-  75% {
-    transform:
-      translate(2%, 6%)
-      rotate(19deg)
-      scale(1.2);
-  }
-
-  100% {
-    transform:
-      translate(-5%, 2%)
-      rotate(23deg)
-      scale(1.15);
-  }
-}
-
-
-@keyframes lightMovement {
-  0% {
-    transform:
-      translate(-5%, -5%)
-      rotate(40deg)
-      scale(1.1);
-  }
-
-  50% {
-    transform:
-      translate(5%, 3%)
-      rotate(50deg)
-      scale(1.2);
-  }
-
-  100% {
-    transform:
-      translate(-3%, 5%)
-      rotate(60deg)
-      scale(1.15);
-  }
-}*/
-
-
 :root {
     /* Primary */
     --color-brown: #694E4E;
@@ -271,7 +113,6 @@ body {
   width: 750px;
   max-width: 100%;
   margin: 0 auto;
-
   border-left: 1px dashed  rgb(222, 222, 222);
   border-right: 1px dashed  rgb(222, 222, 222);
 }
@@ -353,6 +194,36 @@ header {
     opacity: 1;
   }
 }
+
+/* ============================== SECTIONS ==============================*/
+.section-divider {
+  width: 100%;
+  max-width: 800px;
+  height: 0;
+  border-top: 1px dashed rgb(222, 222, 222);
+  margin: 0 auto;
+}
+.expertise, .certifications, .experience, .contact, .projects {
+  display: block;
+  padding: 3rem 0;
+  text-align: start;
+  max-width: 650px;
+  margin: 0 auto;
+}
+.contact{
+  text-align: left;
+}
+
+.section-title {
+  font-family: "anthomed";
+  letter-spacing: -0.6px;
+  font-size: 1.2rem;
+  color: #24191a;
+  margin: 0; 
+  margin-bottom: 1.1rem;
+  line-height: 1; 
+}
+
 
 /* ========================== NAVIGATION BAR ========================== */
 .navbar-container {
@@ -495,7 +366,6 @@ header {
   overflow: visible;
   margin-bottom: 3.5rem;
 
-  /* Originkit background */
   background:
   radial-gradient(
     ellipse at 15% 20%,
@@ -517,9 +387,7 @@ header {
   );
 }
 
-
 /* ===== Kinetic Grid Canvas ===== */
-
 #kinetic-grid {
   position: absolute;
   inset: 0;
@@ -529,9 +397,6 @@ header {
   z-index: 1;
   pointer-events: none;
 }
-
-
-/* ===== Profile Picture ===== */
 
 .profile-pic {
   position: absolute;
@@ -603,7 +468,7 @@ header {
   z-index: 2;
 }
 
-.resume-btn img {
+.resume-btn img, .contact-btn img {
   width: 15px;
   height: 15px;
   display: block;
@@ -611,10 +476,6 @@ header {
 }
 .contact-btn img {
   margin-left: 4px;
-  width: 15px;
-  height: 15px;
-  display: block;
-  transition: filter 0.3s ease;
 }
 
 .resume-btn {
@@ -646,9 +507,6 @@ header {
   z-index: -1;
 }
 
-
-/* ========================== HOVER ========================== */
-
 .resume-btn:hover,
 .contact-btn:hover {
   color: #fff;
@@ -664,7 +522,6 @@ header {
   filter: brightness(0) invert(1);
 }
 
-/* ========================== ACTIVE / CLICK ========================== */
 .resume-btn:active,
 .contact-btn:active {
   transform: translateY(2px);
@@ -686,10 +543,7 @@ header {
   transform: translateY(5px);
 }
 
-
-
 /* ============================== PROJECTS ============================== */
-
 .project-cards {
   display: grid;
   grid-template-columns: 1fr;
@@ -699,151 +553,97 @@ header {
   padding: 0;
 }
 
-
-/* ============================== PROJECT CARD ============================== */
-
 .project-card {
   position: relative;
   display: grid;
   grid-template-columns: 40% 60%;
-
   width: 100%;
-
   /* ONLY the outer 5px area */
   background: #f1f1f1;
-
   border: 1px solid #d4d4d4;
   border-radius: 12px;
-
   padding: 5px;
-
   overflow: hidden;
-
   box-shadow:
     0 2px 5px rgba(0, 0, 0, 0.08);
-
   transition: box-shadow 0.3s ease;
 }
 
-/* Inner outline */
 .project-card::before {
   content: "";
-
   position: absolute;
   inset: 3px;
-
   border: 1px solid #e1e1e1;
   border-radius: 8px;
-
   pointer-events: none;
   z-index: 20;
 }
 
-
-/* Hover */
 .project-card:hover {
   /* Outer border stays gray */
   border-color: #d4d4d4;
-
   box-shadow:
     0 4px 12px rgba(0, 0, 0, 0.12);
 }
-
-/* ============================== IMAGE ============================== */
 
 .project-images {
   display: flex;
   justify-content: center;
   align-items: center;
-
   width: 100%;
   height: 100%;
-
   overflow: hidden;
-
   background: #fff;
-
   border-radius: 7px 0 0 7px;
 }
-
-
 
 .project-images img {
   width: 90%;
   height: auto;
-
   object-fit: contain;
-
   transition: transform 0.3s ease;
 }
-
-
-/* Optional: make specific project images smaller/larger */
 
 .siayanrock-project img {
   width: 90%;
 }
 
-
-/* ============================== CONTENT ============================== */
-
 .project-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
   padding: 1.2rem;
-
   /* Normal content background */
   background: #FEFEFE;
-
   border-radius: 0 7px 7px 0;
-
   transition: background-color 0.3s ease;
 }
 
-/* ============================== TITLE ============================== */
-
 .project-title-container {
   margin: 0;
-
   display: flex;
   flex-direction: column;
-
   justify-content: center;
-
   gap: 0.2rem;
-
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
 }
 
-
 .project-title {
   width: 100%;
-
   margin: 0;
-
   text-align: left;
-
   font-size: 1rem;
   line-height: 1.3;
-
   color: #4d3843;
 }
 
-
 .project-year {
   margin: 0;
-
   font-size: 0.9rem;
-
   color: #262626;
 }
-
-
-/* ============================== DESCRIPTION ============================== */
 
 .project-title-container .project-description {
   margin: 0;
@@ -852,16 +652,12 @@ header {
   line-height: 1.3rem;
 }
 
-
-/* ============================== TECHNOLOGIES ============================== */
-
 .project-tech {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   padding-top: 0.8rem;
 }
-
 
 .project-tech p {
   font-family: 'Geist Mono';
@@ -874,26 +670,16 @@ header {
   border-radius: 50px;
 }
 
-
-/* ============================== LINK ============================== */
-
 .project-link {
   display: block;
-
   font-size: 1rem;
-
   text-decoration: none;
-
   color: black;
 }
-
-
-/* ============================== HOVER ============================== */
 
 .project-card:hover .project-content {
   background-color: #f6f6f6;
 }
-
 
 .project-content {
   transition: background-color 0.3s ease;
@@ -904,87 +690,39 @@ header {
   transition: color 0.3s ease;
 }
 
-
-/* ============================== IMAGE HOVER ============================== */
-
 .project-card:hover .project-images img {
   transform: scale(1.03);
 }
 
-
-/* ============================== SECTIONS ==============================*/
-.section-divider {
-  width: 100%;
-  max-width: 800px;
-  height: 0;
-  border-top: 1px dashed rgb(222, 222, 222);
-  margin: 0 auto;
-}
-.expertise, .certifications, .experience, .contact, .projects {
-  display: block;
-  padding: 3rem 0;
-  text-align: start;
-  max-width: 650px;
-  margin: 0 auto;
-}
-.contact{
-  text-align: left;
-}
-
-.section-title {
-  font-family: "anthomed";
-  letter-spacing: -0.6px;
-  font-size: 1.2rem;
-  color: #24191a;
-  margin: 0; 
-  margin-bottom: 1.1rem;
-  line-height: 1; 
-}
-
-
 /* ============================== EXPERTISE ============================== */
-
 .expertise-container {
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
 }
 
-
-/* ============================== EXPERTISE LIST ============================== */
-
 .expertise-list {
   display: flex;
   flex-direction: column;
 }
 
-
-/* ============================== EXPERTISE CARD ============================== */
-
 .expertise-card {
   width: 100%;
   display: block;
-
   padding: 1rem 1.2rem;
-
   background: transparent;
   border: none;
   border-bottom: 1px solid #dedede;
-
   text-align: left;
   cursor: pointer;
-
   opacity: 1;
   filter: grayscale(0%);
-
   transition:
     opacity 0.3s ease,
     filter 0.3s ease,
     padding 0.3s ease;
 }
 
-
-/* ============================== CARD HEADER ============================== */
 .expertise-header {
   display: grid;
   grid-template-columns: 45px 1fr;
@@ -992,7 +730,6 @@ header {
   min-height: 30px;
 }
 
-/* Number */
 .card-number {
   font-size: .8rem;
   font-family: "Geist Mono";
@@ -1008,8 +745,6 @@ header {
   transition: color 0.3s ease;
 }
 
-
-/* ============================== DESCRIPTION ============================== */
 .expertise-description {
   display: grid;
   grid-template-rows: 0fr;
@@ -1022,7 +757,6 @@ header {
     padding-top 0.35s ease;
 }
 
-
 .expertise-description p {
   overflow: hidden;
   margin: 0;
@@ -1032,14 +766,11 @@ header {
   line-height: 1.5;
 }
 
-
-/* ============================== VISIBLE CARD ============================== */
 .expertise-card.visible {
   opacity: 1;
   filter: grayscale(0%);
 }
 
-/* Show description */
 .expertise-card.visible .expertise-description {
   grid-template-rows: 1fr;
   opacity: 1;
@@ -1051,8 +782,6 @@ header {
   color: #4d3843;
 }
 
-
-/* ============================== GRAYSCALE ============================== */
 .expertise-list.has-focus .expertise-card:not(.visible) {
   opacity: 0.4;
   filter: grayscale(100%);
@@ -1061,8 +790,6 @@ header {
 .expertise-card:hover {
   padding-left: 1.4rem;
 }
-
-/* ============================== SKILLS ============================== */
 
 .skill-card {
   display: inline-block;
@@ -1074,8 +801,9 @@ header {
 }
 
 .expertise-inner {
-  width: 100%; /* was fit-content — let it fill the skill-card so wrapping has room to work */
+  width: 100%; 
 }
+
 .skills-content {
   display: flex;
   flex-direction: column;
@@ -1094,10 +822,11 @@ header {
 .skills-row {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;   /* let overflow drop to the next line */
+  flex-wrap: wrap;  
   gap: 0.4rem;
-  width: 100%;         /* was fit-content — needs a real width to know when to wrap */
+  width: 100%;        
 }
+
 .skill {
   display: flex;
   flex-direction: row;
@@ -1142,7 +871,7 @@ header {
   justify-content: center;
   margin: 0 auto;
   gap: 1rem;
-  flex-wrap: nowrap; /* force single row, no dropping to line 2 */
+  flex-wrap: nowrap; 
   position: relative;
 }
 
@@ -1177,20 +906,20 @@ header {
 }
 
 .certifications-card:hover {
-  
   transform: translateY(-2px) scale(1.01);
-
   box-shadow:
     inset 0 -1em 1em rgba(0, 0, 0, 0.029),
     0 0 0 1px rgb(190, 190, 190),
     0.5em 0.7em 1.5em rgba(0, 0, 0, 0.075);
 }
+
 .cert-bottom{
   display: flex;
   flex-direction: row;
 }
+
 .cert-description {
-  flex: 1; /* absorbs leftover vertical space */
+  flex: 1; 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1248,8 +977,6 @@ header {
   align-items: center;
   justify-content: center;
   gap: 5px;
-  
-
   text-align: center;
   text-decoration: none;
   padding: 0.4rem 0.9rem;
@@ -1272,10 +999,12 @@ header {
   font-weight: 500;
   line-height: 1;
 }
-/* ============================== contact ==============================*/
+
+/* ============================== CONTACT ==============================*/
 .contact .copyright{
   text-align: center;
 }
+
 .contact {
   padding-top: 6rem;
 }
@@ -1293,6 +1022,7 @@ header {
   gap: .6rem;
   max-width: 700px;
 }
+
 .contact-content {
   width: 100%;
   display: grid;
@@ -1300,11 +1030,13 @@ header {
   gap: 2rem;
   align-items: start;
 }
+
 .contact-container > .contact-content > div {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
+
 .contact-container .contact-status {
   width: fit-content;
   display: inline-flex;
@@ -1316,6 +1048,7 @@ header {
   border-radius: 20px;
   padding: 0.1rem 0.5rem;
 }
+
 .status-dot {
   width: 14px;
   height: 14px;
@@ -1332,6 +1065,7 @@ header {
     opacity: 0.2;
   }
 }
+
 .contact-container .contact-header {
   font-family: "anthoreg";
   font-size: 2rem;
@@ -1587,6 +1321,11 @@ header {
     padding: 0 30px;
   }
 
+  .global-wrapper {
+    border-left: none;
+    border-right: none;
+  }
+
   .navbar {
     width: 100%;        
   }
@@ -1603,27 +1342,15 @@ header {
     gap: 1.5rem;
   }
   
-  .home-text img {
-    max-width: 300px;
+
+  .profile-pic {
+    width: 80px;
+    height: 80px;
+    bottom: -40px;
+    left: 18px;
+    border-width: 3px;
   }
 
-  .home-img img {
-    max-width: 350px;
-  }
-
-
-  .logo img {
-    height: 20px;
-  }
-
-  .home {
-    padding: 4rem 0;
-  }
-
-  .home-content {
-    flex-direction:column-reverse;
-    text-align: center;
-  }
 
   .home-text h1{
     font-size: 3.2rem;
@@ -1642,13 +1369,13 @@ header {
     font-size: .8rem;
   }
 
-  .home-buttons {
-    max-width: 1000px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: .5rem; 
-  }
+  .home-buttons a {
+    width: auto;
+    height: auto;
+    min-height: 0;
+    flex: 0 0 auto;
+    padding: 0.45rem 0.7rem;
+}
 
   .project-cards {
       grid-template-columns: 1fr;
@@ -1677,9 +1404,7 @@ header {
   .skills-row {
     display: flex;
     flex-wrap: wrap; 
-    justify-content: center;
     align-items: center; 
-    margin-top: 30px;
     gap: 0.5rem; 
   }
 
@@ -1748,7 +1473,7 @@ header {
   }
 
   .section-title{
-    font-size: 2rem;
+    font-size: 1.4rem;
   }
 
   .navbar-container {
@@ -1772,7 +1497,6 @@ header {
     min-height: 100svh;
     display: flex;
     align-items: center;
-    padding: 4.5vh 1.5rem;
   }
 
   .home-content {
@@ -1784,11 +1508,6 @@ header {
     width: 100%;
     max-width: 1000px;
   }
-
-  .home-text img{
-    height: 80px;
-    transition: transform 0.5s;
-  }
   
   .home-text p {
     font-size: 0.9rem;
@@ -1797,6 +1516,12 @@ header {
   .home-text h1 {
     max-width: 400px;
     font-size: 1.8rem;
+  }
+
+  .profile-header {
+    width: 100%;
+    height: 160px;
+    margin-bottom: 3rem;
   }
 
   .resume-btn {
@@ -1819,7 +1544,7 @@ header {
 
   .project-cards {
       grid-template-columns: 1fr;
-    }
+  }
 
   .expertise-container {
     gap: 0.8rem;
@@ -1836,7 +1561,6 @@ header {
     font-size: 1rem;
   }
   
-
   .expertise-content h3 {
     font-size: 1rem;
     margin-bottom: 0.1rem;
@@ -1847,36 +1571,56 @@ header {
     line-height: 1.2rem;
   }
 
-  .skills-row {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+  .skills-content {
     width: 100%;
-    gap: 0.5rem;
-    margin-top: 6px;
+    align-items: flex-start;
   }
 
   .skills-content > p {
     margin: 0;
   }
 
-  .skill {
+  .skills-row {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.4rem;
     width: 100%;
-  }
-  .skill img {
-    width: 100%;
-    max-width: 45px;
-    aspect-ratio: 1;
-    object-fit: contain;
-  }
-  .skill p {
-    font-size: 1.2rem;
-    margin: 0;
   }
 
+  .skill {
+    display: flex;
+    flex: 0 0 auto;             /* prevents the skill from shrinking */
+    width: fit-content;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.1rem 0.5rem;
+    background: #f0f0f0a7;
+    border: 1px solid #dedede;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  .skill img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  .skill p {
+    margin: 0;
+    font-family: "Geist Mono";
+    font-size: 0.8rem;           /* keeps skill text smaller */
+    line-height: 1rem;
+    color: #575757;
+    text-align: center;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  
   .project-title {
     width: 100%;
     font-size: 1rem;
@@ -1900,61 +1644,67 @@ header {
   }
   .certifications-container {
     width: 100%;
-    gap: 1rem;
-  }
-
-  .certifications-card::before {
-    left: calc(1.4rem + 30px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.8rem;
   }
 
   .certifications-card {
-    display: grid;
-    grid-template-columns: 60px 1fr;
-    grid-template-rows: auto auto;
-    column-gap: 0.8rem;
-    row-gap: 0.6rem;
-    padding: 0.6rem 1.4rem;
-    align-items: start;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    height: 180px;
+    box-sizing: border-box;
+
+    /* Keep contents vertically aligned */
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.5rem;
+    padding: 0.8rem 1rem;
   }
 
-  .certification-img {
-    grid-column: 1;
-    grid-row: 1 / 3;
+  .certifications-card .certification-img {
+    width: 65px;
+    height: 65px;
+    padding: 0.3rem;
+    flex-shrink: 0;
   }
 
   .cert-description {
-    grid-column: 2;
-    grid-row: 1;
-    gap: 0.2rem; 
-  }
+    width: 100%;
+    flex: none;
 
-  .cert-link {
-    grid-column: 2;
-    grid-row: 2;
-    margin: 0;
-    justify-self: start;
-  }
-  .cert-link p {
-    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    gap: 0.4rem;
   }
 
   .cert-description h1,
   .cert-description p {
     margin: 0;
-    line-height: 1.2;
+    line-height: 1;
   }
 
-  .certifications-card h1{
-    font-size: 1rem;
-  }
-  .cert-date {
-    font-size: .7rem;
+  .certifications-card h1 {
+    font-size: 0.85rem;
   }
 
   .cert-issuer {
-    font-size: .8rem;
+    font-size: 0.75rem;
   }
 
+  .cert-date {
+    font-size: 0.75rem;
+  }
   .contact-content {
     width: 100%;
     display: flex;
