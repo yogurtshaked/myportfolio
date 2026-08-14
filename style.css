@@ -60,6 +60,16 @@
   font-family: gam-med;
   src: url(fonts/Gambetta-Medium.otf);
 }
+@font-face {
+  font-family: sf-reg;
+  src: url(fonts/sf-reg.OTF);
+}
+
+@font-face {
+  font-family: sf-med;
+  src: url(fonts/sf-med.OTF);
+}
+
 
 /*.shader-gradient {
   position: fixed;
@@ -258,7 +268,7 @@ body {
 
 
 .global-wrapper {
-  width: 800px;
+  width: 750px;
   max-width: 100%;
   margin: 0 auto;
 
@@ -453,7 +463,7 @@ header {
 /* ========================== HOME SECTION ========================== */
 .home {
   min-height: 80vh;
-  max-width: 700px;
+  max-width: 650px;
   margin: 0 auto;
   padding: 6.5rem 0;
   display: flex;
@@ -539,10 +549,9 @@ header {
 .home-text p {
   width: 100%;
   text-align: start;
-  color: #696969;
-  font-size: 1rem;
-  line-height: 1.4;
-  letter-spacing: -0.2px;
+  color: #0000008c;
+  font-size: 0.9rem;
+  line-height: 1.3rem;
   margin-bottom: 1rem;
 }
 .intro-text{
@@ -574,11 +583,11 @@ header {
   align-items: center;
   justify-content: center;
   gap: 0.2rem;
-  padding: 0.3rem 0.6rem;
+  padding: 0.2rem 0.5rem;
   border-radius: 6px;
+  border: 1px solid #dedede;
   text-decoration: none;
   font-size: 0.9rem;
-  font-weight: 500;
   cursor: pointer;
   overflow: hidden;
   isolation: isolate;
@@ -602,8 +611,8 @@ header {
 }
 .contact-btn img {
   margin-left: 4px;
-  width: 17px;
-  height: 17px;
+  width: 15px;
+  height: 15px;
   display: block;
   transition: filter 0.3s ease;
 }
@@ -679,70 +688,213 @@ header {
 
 
 
-/* ============================== PROJECTS ==============================*/
+/* ============================== PROJECTS ============================== */
 
 .project-cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem 1rem;
-  max-width: 700px;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 0rem;
+  padding: 0;
 }
+
+
+/* ============================== PROJECT CARD ============================== */
 
 .project-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 40% 60%;
+
   width: 100%;
-  background: white;
-  
-  border-radius: 5px;
-  border: 1px solid var(--color-border);
-  text-align: justify;
-  transition: border 0.3s ease, box-shadow 0.5s;
+
+  /* ONLY the outer 5px area */
+  background: #f1f1f1;
+
+  border: 1px solid #d4d4d4;
+  border-radius: 12px;
+
+  padding: 5px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.08);
+
+  transition: box-shadow 0.3s ease;
 }
 
-.project-content{
-  padding: 15px;
+/* Inner outline */
+.project-card::before {
+  content: "";
+
+  position: absolute;
+  inset: 3px;
+
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+
+  pointer-events: none;
+  z-index: 20;
 }
 
-.project-year {
-  margin: 0;
-  font-size: 0.9rem;
-  color: #262626;
+
+/* Hover */
+.project-card:hover {
+  /* Outer border stays gray */
+  border-color: #d4d4d4;
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
-.project-title {
-  width: 100%;
-  text-align: left;
+/* ============================== IMAGE ============================== */
+
+.project-images {
+  display: flex;
   justify-content: center;
-  font-size: 1rem;
-  line-height: 1.3;
-  color: #24191a;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  background: #fff;
+
+  border-radius: 7px 0 0 7px;
 }
-.project-title-container {
-  margin: 0;
-  text-align: left;
+
+
+
+.project-images img {
+  width: 90%;
+  height: auto;
+
+  object-fit: contain;
+
+  transition: transform 0.3s ease;
+}
+
+
+/* Optional: make specific project images smaller/larger */
+
+.siayanrock-project img {
+  width: 90%;
+}
+
+
+/* ============================== CONTENT ============================== */
+
+.project-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 0.2rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
+
+  padding: 1.2rem;
+
+  /* Normal content background */
+  background: #FEFEFE;
+
+  border-radius: 0 7px 7px 0;
+
+  transition: background-color 0.3s ease;
 }
 
-.project-card:hover  {
-  border: 1px solid #000;
+/* ============================== TITLE ============================== */
+
+.project-title-container {
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  gap: 0.2rem;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
+
+
+.project-title {
+  width: 100%;
+
+  margin: 0;
+
+  text-align: left;
+
+  font-size: 1rem;
+  line-height: 1.3;
+
+  color: #4d3843;
+}
+
+
+.project-year {
+  margin: 0;
+
+  font-size: 0.9rem;
+
+  color: #262626;
+}
+
+
+/* ============================== DESCRIPTION ============================== */
+
+.project-title-container .project-description {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #0000008c;
+  line-height: 1.3rem;
+}
+
+
+/* ============================== TECHNOLOGIES ============================== */
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-top: 0.8rem;
+}
+
+
+.project-tech p {
+  font-family: 'Geist Mono';
+  margin: 0;
+  padding: 1px 8px;
+  font-size: 0.7rem;
+  color: #575757;
+  border: 1px solid #dedede;
+  background-color: #f6f6f6;
+  border-radius: 50px;
+}
+
+
+/* ============================== LINK ============================== */
+
+.project-link {
+  display: block;
+
+  font-size: 1rem;
+
+  text-decoration: none;
+
+  color: black;
+}
+
+
+/* ============================== HOVER ============================== */
 
 .project-card:hover .project-content {
-  background-color: #4d3843;
+  background-color: #f6f6f6;
 }
 
-.project-card:hover .project-title {
-  color: #d6cdcd;
-}
 
-.project-card:hover .project-description {
-  color: #b8a4a4;
-}
 .project-content {
   transition: background-color 0.3s ease;
 }
@@ -752,61 +904,13 @@ header {
   transition: color 0.3s ease;
 }
 
-.project-title-container .project-description{
-  font-size: .9rem;
-  color: #0000008c;
-  line-height: 1.1rem;
-}
-.project-link {
-  display: inline-block;
-  font-size: 1rem;
-  text-decoration: none;
-  color: black;
+
+/* ============================== IMAGE HOVER ============================== */
+
+.project-card:hover .project-images img {
+  transform: scale(1.03);
 }
 
-.project-tech{
-  display: flex;
-  gap: 0.5rem;
-  padding-top: 0.8rem;
-}
-.project-tech p{
-  padding: 1px 8px;
-  font-size: 0.8rem;
-  color: #3f3f3f;
-  background-color: #ebebeb;
-  border-radius: 50px;
-}
-
-.project-images {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
-  overflow-x: hidden;
-}
-
-.project-images img {
-  width: 100%;
-  height: 100px;          
-  height: auto;
-  object-fit: contain;    
-  transition: transform 0.3s ease;
-}
-/*.chloro-images {
-  background-color: #dfeecb;
-}
-
-.gcode-images {
-  background-color: #c9b8e7;
-}
-
-.siayan-images {
-  background-color: #fffcd5;
-}*/
-
-.siayanrock-project img{
-  width: 90%;
-}
 
 /* ============================== SECTIONS ==============================*/
 .section-divider {
@@ -820,7 +924,7 @@ header {
   display: block;
   padding: 3rem 0;
   text-align: start;
-  max-width: 700px;
+  max-width: 650px;
   margin: 0 auto;
 }
 .contact{
@@ -830,315 +934,13 @@ header {
 .section-title {
   font-family: "anthomed";
   letter-spacing: -0.6px;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: #24191a;
   margin: 0; 
   margin-bottom: 1.1rem;
   line-height: 1; 
 }
 
-
-/* ============================== EXPERTISE ============================== */
-
-.expertise-container {
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-
-/* ============================== EXPERTISE LIST ============================== */
-
-.expertise-list {
-  display: flex;
-  flex-direction: column;
-}
-
-
-/* ============================== EXPERTISE CARD ============================== */
-
-.expertise-card {
-  width: 100%;
-
-  display: block;
-
-  padding: 1rem 1.2rem;
-
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid #dedede;
-
-  text-align: left;
-  cursor: pointer;
-
-  color: inherit;
-
-  opacity: 1;
-  filter: grayscale(0%);
-
-  transition:
-    opacity 0.3s ease,
-    filter 0.3s ease,
-    padding 0.35s ease;
-}
-
-.expertise-card:last-child {
-  border-bottom: none;
-}
-
-
-/* ============================== CARD HEADER ============================== */
-
-.expertise-header {
-  display: grid;
-  grid-template-columns: 45px 1fr;
-
-  align-items: center;
-
-  min-height: 30px;
-}
-
-
-/* Number */
-
-.card-number {
-  font-size: .8rem;
-  font-family: "Geist Mono";
-  color: #959595;
-
-  transition: color 0.3s ease;
-}
-
-
-/* Title */
-
-.card-title {
-  font-family: "Geist";
-  font-size: 1rem;
-  font-weight: 600;
-
-  color: #404040;
-
-  transition: color 0.3s ease;
-}
-
-
-/* ============================== DESCRIPTION ============================== */
-
-.expertise-description {
-  display: grid;
-
-  /*
-    0fr = collapsed
-    1fr = expanded
-  */
-  grid-template-rows: 0fr;
-
-  opacity: 0;
-
-  padding-left: 45px;
-
-  transition:
-    grid-template-rows 0.35s ease,
-    opacity 0.25s ease,
-    padding-top 0.35s ease;
-}
-
-
-/* Description text */
-
-.expertise-description p {
-  overflow: hidden;
-
-  margin: 0;
-
-  max-width: 650px;
-
-  color: #717171;
-
-  font-size: .9rem;
-  line-height: 1.5;
-}
-
-
-/* ============================== HOVER ============================== */
-
-/*
-   When hovering a card,
-   show its description.
-*/
-
-.expertise-card.hovered .expertise-description {
-  grid-template-rows: 1fr;
-
-  opacity: 1;
-
-  padding-top: .6rem;
-}
-
-
-/* ============================== SELECTED ============================== */
-
-/*
-   When a card is clicked,
-   keep its description visible.
-*/
-
-.expertise-card.active .expertise-description {
-  grid-template-rows: 1fr;
-
-  opacity: 1;
-
-  padding-top: .6rem;
-}
-
-
-/* Selected card text */
-
-.expertise-card.active .card-number,
-.expertise-card.active .card-title {
-  color: #4d3843;
-}
-
-
-/* ============================== SELECTED STATE ============================== */
-
-/*
-   Once a card is selected,
-   fade the other cards.
-*/
-
-.expertise-list.has-selection
-.expertise-card:not(.active) {
-  opacity: 0.4;
-
-  filter: grayscale(100%);
-}
-
-
-/*
-   Selected card stays normal.
-*/
-
-.expertise-card.active {
-  opacity: 1;
-
-  filter: grayscale(0%);
-}
-
-
-/* ============================== HOVERED CARD ============================== */
-
-/*
-   If the user hovers another card,
-   temporarily bring it back to full color.
-*/
-
-.expertise-card.hovered {
-  opacity: 1;
-
-  filter: grayscale(0%);
-}
-
-
-/* ============================== HOVERED CARD TEXT ============================== */
-
-.expertise-card.hovered .card-number,
-.expertise-card.hovered .card-title {
-  color: #4d3843;
-}
-
-
-/* ============================== HIDE SELECTED DESCRIPTION ============================== */
-
-/*
-   If another card is hovered while a card is selected,
-   temporarily hide the selected card's description.
-*/
-
-.expertise-list:has(.expertise-card.hovered)
-.expertise-card.active:not(.hovered)
-.expertise-card.active
-.expertise-description {
-  grid-template-rows: 0fr;
-
-  opacity: 0;
-
-  padding-top: 0;
-}
-
-
-/* ============================== HOVER EFFECT ============================== */
-
-/*
-   Small movement when interacting with a card.
-*/
-
-.expertise-card:hover {
-  padding-left: 1.4rem;
-}
-
-
-/* ============================== SKILLS ============================== */
-
-.skills-content {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
-
-
-.skills-row {
-  display: grid;
-
-  grid-template-columns: repeat(7, 1fr);
-
-  gap: 0.8rem;
-
-  width: 100%;
-
-  margin-top: 8px;
-}
-
-
-.skill {
-  display: flex;
-
-  justify-content: center;
-  align-items: center;
-
-  aspect-ratio: 1 / 1;
-
-  background: #f0f0f0a7;
-
-  border: 1px solid #dedede;
-
-  border-radius: 5px;
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-
-.skill img {
-  width: 55px;
-  height: 55px;
-
-  object-fit: contain;
-
-  transition: transform 0.3s ease;
-}
-
-
-.skill img:hover {
-  transform: rotate(14deg);
-}
-
-
-.skills-content p {
-  font-size: 0.9rem;
-}
 
 /* ============================== EXPERTISE ============================== */
 
@@ -1181,56 +983,39 @@ header {
     padding 0.3s ease;
 }
 
-.expertise-card:last-child {
-  border-bottom: none;
-}
-
 
 /* ============================== CARD HEADER ============================== */
-
 .expertise-header {
   display: grid;
   grid-template-columns: 45px 1fr;
   align-items: center;
-
   min-height: 30px;
 }
 
-
 /* Number */
-
 .card-number {
   font-size: .8rem;
   font-family: "Geist Mono";
   color: #959595;
-
   transition: color 0.3s ease;
 }
 
-
-/* Title */
-
 .card-title {
   font-family: "Geist";
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: #404040;
-
   transition: color 0.3s ease;
 }
 
 
 /* ============================== DESCRIPTION ============================== */
-
 .expertise-description {
   display: grid;
   grid-template-rows: 0fr;
-
   opacity: 0;
-
   padding-left: 45px;
   padding-top: 0;
-
   transition:
     grid-template-rows 0.35s ease,
     opacity 0.25s ease,
@@ -1240,45 +1025,26 @@ header {
 
 .expertise-description p {
   overflow: hidden;
-
   margin: 0;
-
   max-width: 650px;
-
   color: #717171;
-
   font-size: .9rem;
   line-height: 1.5;
 }
 
 
 /* ============================== VISIBLE CARD ============================== */
-
-/*
-   .visible is added by JavaScript.
-
-   This is the card currently being hovered
-   OR the currently selected card.
-*/
-
 .expertise-card.visible {
   opacity: 1;
   filter: grayscale(0%);
 }
 
-
 /* Show description */
-
 .expertise-card.visible .expertise-description {
   grid-template-rows: 1fr;
-
   opacity: 1;
-
   padding-top: .6rem;
 }
-
-
-/* Highlight number/title */
 
 .expertise-card.visible .card-number,
 .expertise-card.visible .card-title {
@@ -1287,81 +1053,84 @@ header {
 
 
 /* ============================== GRAYSCALE ============================== */
-
-/*
-   When there is an active/hovered card,
-   every other card becomes grayscale.
-*/
-
 .expertise-list.has-focus .expertise-card:not(.visible) {
   opacity: 0.4;
   filter: grayscale(100%);
 }
 
-
-/* ============================== HOVER ============================== */
-
 .expertise-card:hover {
   padding-left: 1.4rem;
 }
 
-
 /* ============================== SKILLS ============================== */
 
+.skill-card {
+  display: inline-block;
+  width: 100%;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 1rem 1.2rem;
+
+}
+
+.expertise-inner {
+  width: 100%; /* was fit-content — let it fill the skill-card so wrapping has room to work */
+}
 .skills-content {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: flex-start;
+  width: 100%;
 }
 
+.skills-content > .card-number {
+  margin-bottom: 0.7rem;
+  font-family: "Geist";
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #3f3f3f;
+}
 
 .skills-row {
-  display: grid;
-  grid-template-columns: repeat(11, 1fr);
-
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;   /* let overflow drop to the next line */
   gap: 0.4rem;
-
-  width: 100%;
-
-  margin-top: 8px;
+  width: 100%;         /* was fit-content — needs a real width to know when to wrap */
 }
-
-
 .skill {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-
-  aspect-ratio: 1 / 1;
-
+  gap: 0.4rem;
+  padding: 0.1rem 0.5rem;
   background: #f0f0f0a7;
-
   border: 1px solid #dedede;
   border-radius: 4px;
-
+  white-space: nowrap;
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
 }
 
-
 .skill img {
-  width: 45px;
-  height: 45px;
-
+  width: 20px;
+  height: 20px;
   object-fit: contain;
-
   transition: transform 0.3s ease;
 }
 
+.skill p {
+  margin: 0;
+  font-family: "Geist Mono";
+  font-size: 0.8rem;
+  color: #575757;
+  text-align: center;
+}
 
 .skill img:hover {
   transform: rotate(14deg);
-}
-
-
-.skills-content p {
-  font-size: 0.9rem;
 }
 
 /* ============================== CERTIFICATIONS ==============================*/
