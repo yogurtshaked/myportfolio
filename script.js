@@ -136,6 +136,142 @@ window.addEventListener("load", () => {
   }, 600);
 });
 
+const expertiseList = document.querySelector(".expertise-list");
+const expertiseCards = document.querySelectorAll(".expertise-card");
+
+let selectedCard = null;
+let hoveredCard = null;
+
+
+/* =========================================
+   HOVER ENTER
+   ========================================= */
+
+expertiseCards.forEach(card => {
+
+  card.addEventListener("mouseenter", () => {
+
+    hoveredCard = card;
+
+    /*
+      Remove visible state from every card.
+    */
+
+    expertiseCards.forEach(item => {
+      item.classList.remove("visible");
+    });
+
+
+    /*
+      The hovered card becomes visible.
+    */
+
+    card.classList.add("visible");
+
+
+    /*
+      Since a card is currently being hovered,
+      grayscale mode is active.
+    */
+
+    expertiseList.classList.add("has-focus");
+
+  });
+
+
+  /* =========================================
+     HOVER LEAVE
+     ========================================= */
+
+  card.addEventListener("mouseleave", () => {
+
+    hoveredCard = null;
+
+
+    /*
+      Remove visible from all cards.
+    */
+
+    expertiseCards.forEach(item => {
+      item.classList.remove("visible");
+    });
+
+
+    /*
+      If a card was previously selected,
+      restore that card.
+    */
+
+    if (selectedCard) {
+
+      selectedCard.classList.add("visible");
+
+      expertiseList.classList.add("has-focus");
+
+    } else {
+
+      /*
+        Nothing selected and nothing hovered.
+
+        Return everything to normal.
+      */
+
+      expertiseList.classList.remove("has-focus");
+
+    }
+
+  });
+
+
+  /* =========================================
+     CLICK
+     ========================================= */
+
+  card.addEventListener("click", () => {
+
+
+    /*
+      If clicking the currently selected card,
+      deselect it.
+    */
+
+    if (selectedCard === card) {
+
+      selectedCard = null;
+
+      card.classList.remove("visible");
+
+      expertiseList.classList.remove("has-focus");
+
+      return;
+    }
+
+
+    /*
+      Remove selection from every card.
+    */
+
+    expertiseCards.forEach(item => {
+      item.classList.remove("selected");
+      item.classList.remove("visible");
+    });
+
+
+    /*
+      Select the clicked card.
+    */
+
+    selectedCard = card;
+
+    card.classList.add("selected");
+    card.classList.add("visible");
+
+    expertiseList.classList.add("has-focus");
+
+  });
+
+});
+
 
 // ==========================================
 // KINETIC GRID
