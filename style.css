@@ -795,9 +795,7 @@ header {
   display: inline-block;
   width: 100%;
   align-items: center;
-  margin-top: 1rem;
-  padding: 1rem 1.2rem;
-
+  padding: 1rem 0 0 1.2rem;
 }
 
 .expertise-inner {
@@ -811,12 +809,9 @@ header {
   width: 100%;
 }
 
-.skills-content > .card-number {
-  margin-bottom: 0.7rem;
-  font-family: "Geist";
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: #3f3f3f;
+.skills-content > .expertise-header {
+  margin-bottom: 1rem;
+  
 }
 
 .skills-row {
@@ -824,6 +819,7 @@ header {
   flex-direction: row;
   flex-wrap: wrap;  
   gap: 0.4rem;
+  padding: 0 0 0 45px;
   width: 100%;        
 }
 
@@ -1547,6 +1543,14 @@ header {
       grid-template-columns: 1fr;
   }
 
+  .expertise-card{
+    padding: 1rem 0;
+  }
+
+  .skill-card{
+    padding: 1rem 0 0 0;
+  }
+
   .expertise-container {
     gap: 0.8rem;
     grid-template-columns: 1fr;
@@ -1706,6 +1710,11 @@ header {
   .cert-date {
     font-size: 0.75rem;
   }
+
+  .contact-container{
+    padding: 0rem;
+  }
+
   .contact-content {
     width: 100%;
     display: flex;
