@@ -1,9 +1,47 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const savedTheme = localStorage.getItem("portfolio-theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const initialTheme = savedTheme || (prefersDark ? "dark" : "light");
+  document.documentElement.setAttribute("data-theme", initialTheme);
+
+  function setupThemeControl() {
+    const themeToggle = document.querySelector(".theme-toggle");
+    const themeIcon = document.querySelector(".theme-icon");
+
+    if (!themeToggle || !themeIcon) return;
+    if (themeToggle.dataset.themeBound === "true") return;
+    themeToggle.dataset.themeBound = "true";
+
+    function updateThemeControl(theme) {
+      const isDark = theme === "dark";
+      themeToggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+      themeToggle.setAttribute("title", isDark ? "Switch to light mode" : "Switch to dark mode");
+      themeIcon.className = `theme-icon fa-solid ${isDark ? "fa-sun" : "fa-moon"}`;
+    }
+
+    updateThemeControl(document.documentElement.getAttribute("data-theme"));
+    themeToggle.addEventListener("click", () => {
+      const nextTheme = document.documentElement.getAttribute("data-theme") === "dark"
+        ? "light"
+        : "dark";
+      document.documentElement.setAttribute("data-theme", nextTheme);
+      localStorage.setItem("portfolio-theme", nextTheme);
+      updateThemeControl(nextTheme);
+    });
+  }
+
+  setupThemeControl();
+
   // Load navbar dynamically
   fetch("navbar.html")
     .then(res => res.text())
-    .then(data => document.getElementById("navbar").innerHTML = data)
+    .then(data => {
+      const navbar = document.getElementById("navbar");
+      if (navbar) navbar.innerHTML = data;
+    })
     .then(() => {
+      setupThemeControl();
+
       // Now the navbar is loaded, attach hamburger functionality
       const hamburger = document.querySelector(".hamburger");
       const mobileMenu = document.querySelector(".mobile-menu");

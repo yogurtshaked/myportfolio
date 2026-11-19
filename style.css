@@ -1,76 +1,5 @@
 /* ========================== FONT DEFINITION ========================== */
 
-@font-face {
-  font-family: anthoreg;
-  src: url(fonts/antho-reg.otf);
-}
-@font-face {
-  font-family: anthomed;
-  src: url(fonts/antho-med.otf);
-}
-@font-face {
-  font-family: anthomono;
-  src: url(fonts/antho-mono.otf);
-}
-@font-face {
-  font-family: geistpixel;
-  src: url(fonts/geist-pixel.ttf);
-}
-@font-face {
-  font-family: interreg;
-  src: url(fonts/interreg.ttf);
-}
-@font-face {
-  font-family: intermed;
-  src: url(fonts/intermed.ttf);
-}
-
-@font-face {
-  font-family: gensansmed;
-  src: url(fonts/gensans-med.otf);
-}
-
-@font-face {
-  font-family: gensanssemibold;
-  src: url(fonts/gensans-semibold.otf);
-}
-
-@font-face {
-  font-family: sentient;
-  src: url(fonts/sentient.otf);
-}
-@font-face {
-  font-family: sentient-med;
-  src: url(fonts/sentient-med.otf);
-}
-
-@font-face {
-  font-family: sentient-italic;
-  src: url(fonts/sentient-italic.otf);
-}
-@font-face {
-  font-family: gambetta;
-  src: url(fonts/Gambetta-Regular.otf);
-}
-@font-face {
-  font-family: gam-italic;
-  src: url(fonts/Gambetta-Italic.otf);
-}
-@font-face {
-  font-family: gam-med;
-  src: url(fonts/Gambetta-Medium.otf);
-}
-@font-face {
-  font-family: sf-reg;
-  src: url(fonts/sf-reg.OTF);
-}
-
-@font-face {
-  font-family: sf-med;
-  src: url(fonts/sf-med.OTF);
-}
-
-
 :root {
     /* Primary */
     --color-brown: #694E4E;
@@ -83,9 +12,64 @@
     --color-black: #000000;
     --color-grey: #e1e1e1;
     --color-grey-light: #f0f0f0;
-    --color-border: #E5E5E5;
-    --color-border-hover: #C1A3A3;
+
+    /* Surfaces */
+    --surface-page: #f7f7f7;
+    --surface-navbar: rgba(255, 255, 255, 0.92);
+    --surface-card: #ffffff;
+    --surface-pill: rgba(215, 215, 215, 0.65);
+    --surface-project: #f1f1f1;
+    --surface-project-content: #fefefe;
+    --surface-button: #eeeeee;
+    --surface-tech: #f6f6f6;
+
+    /* Text */
+    --text-primary: #222222;
+    --text-heading: #24191a;
+    --text-secondary: #4d3843;
+    --text-muted: #838383;
+    --text-description: #0000008c;
+    --text-light: #c4b3be;
+
+    /* Borders */
+    --border-color: #e5e5e5;
+    --border-hover: #c1a3a3;
+    --border-project: #d4d4d4;
+
+    /* Effects */
+    --shadow-card: 0 2px 5px rgba(0, 0, 0, 0.08);
 }
+
+html[data-theme="dark"] {
+    color-scheme: dark;
+
+    /* Surfaces */
+    --surface-page: #171617;
+    --surface-navbar: rgba(28, 27, 29, 0.92);
+    --surface-card: #242326;
+    --surface-pill: rgba(255, 255, 255, 0.12);
+    --surface-project: #29272a;
+    --surface-project-content: #242326;
+    --surface-button: #302d30;
+    --surface-tech: #302d30;
+
+    /* Text */
+    --text-primary: #ece8eb;
+    --text-heading: #f5f0f3;
+    --text-secondary: #d9c4cd;
+    --text-muted: #b9adb5;
+    --text-description: #c4bbc2;
+    --text-light: #aaa1a7;
+
+    /* Borders */
+    --border-color: #3a383d;
+    --border-hover: #886f6f;
+    --border-project: #454147;
+
+    /* Effects */
+    --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
 
 /* ========================== GENERAL SETTINGS ========================== */
 * {
@@ -95,9 +79,8 @@
 }
 body {
   font-family: "Geist", sans-serif;
-  color: #222;
-  /*background: url("images/paper-background.png") repeat center top;*/
-  background: rgb(247, 247, 247);
+  color: var(--text-primary);
+  background: var(--surface-page);
   background-size: auto; 
   line-height: 1.7;
   margin: 0;
@@ -107,7 +90,6 @@ body {
   padding: 0 240px; 
   
 }
-
 
 .global-wrapper {
   width: 750px;
@@ -215,10 +197,10 @@ header {
 }
 
 .section-title {
-  font-family: "anthomed";
+  font-family: "Fraunces", serif;
   letter-spacing: -0.6px;
-  font-size: 1.2rem;
-  color: #24191a;
+  font-size: 1.3rem;
+  color: var(--text-heading);
   margin: 0; 
   margin-bottom: 1.1rem;
   line-height: 1; 
@@ -241,6 +223,9 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 2rem;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .nav-links {
@@ -253,10 +238,8 @@ header {
   list-style: none;
   margin: 0;
   padding: 0.5rem 0.4rem;
-  background: white;
-  /*backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);*/
-  border: 1px solid rgba(249, 249, 249, 0.866);
+  background: var(--surface-card);
+  border: 1px solid var(--border-color);
   border-radius: 50px;
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
 }
@@ -267,7 +250,7 @@ header {
   left: 0;
   height: calc(100% - 0.5rem);
   border-radius: 30px;
-  background: rgba(215, 215, 215, 0.65);
+  background: var(--surface-pill);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
   transform: translateY(-50%);
   transition:
@@ -282,9 +265,9 @@ header {
 .nav-links a {
   position: relative;
   z-index: 1;
-  font-family: "gensansmed";
+  font-family: "Geist", sans-serif;
   text-decoration: none;
-  color: #c4b3be;
+  color: var(--text-light);
   font-size: 0.9rem;
   font-weight: 500;
   padding: 0.2rem 0.8rem;
@@ -293,12 +276,55 @@ header {
 }
 
 .nav-links a:hover {
-  color: #4d3843;
+  color: var(--text-secondary);
 }
 
 .nav-links a.pill-active {
-  color: #4d3843;
-  font-family: "gensanssemibold";
+  color: var(--text-secondary);
+  font-family: "Geist", sans-serif;
+}
+
+.navbar-actions {
+  position: absolute;
+  right: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.theme-toggle {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--surface-navbar);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px) rotate(8deg);
+  color: #b56f87;
+  box-shadow: 0 7px 18px rgba(0, 0, 0, 0.14);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid #b56f87;
+  outline-offset: 3px;
+}
+
+.theme-toggle .theme-icon {
+  font-size: 0.95rem;
+  transition: transform 0.35s ease;
 }
 
 .logo img {
@@ -312,7 +338,7 @@ header {
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  font-family: "geistpixel";
+  font-family: "Geist Mono", monospace;
   font-weight: 600;
   text-decoration: none;
   line-height: 0.9;
@@ -405,7 +431,7 @@ header {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  border: 4px solid rgb(247, 247, 247);
+  border: 4px solid var(--surface-page);
   object-fit: cover;
   z-index: 3;
   transition: transform 0.5s;
@@ -414,7 +440,7 @@ header {
 .home-text p {
   width: 100%;
   text-align: start;
-  color: #0000008c;
+  color: var(--text-description);
   font-size: 0.9rem;
   line-height: 1.3rem;
   margin-bottom: 1rem;
@@ -423,15 +449,12 @@ header {
   gap: 1rem;
 }
 
-.highlight-font {
-  font-family: "sentient-italic";
-}
-
 .home-text h1{
-  font-family: "sentient";
+  font-family: "Fraunces", serif;
+  font-weight: 600;
   letter-spacing: -0.5px;
   font-size: 1.6rem;
-  color: #24191a;
+  color: var(--text-heading);
 }
 
 /* ========================== HOME BUTTONS ========================== */
@@ -474,19 +497,16 @@ header {
   display: block;
   transition: filter 0.3s ease;
 }
+
 .contact-btn img {
   margin-left: 4px;
 }
 
-.resume-btn {
-  background: #eeeeee;
-  color: #838383;
-  /*border: 1.5px solid #969696;*/
-}
-
+.resume-btn,
 .contact-btn {
-  background: #eeeeee;
-  color: #838383;
+    background: var(--surface-button);
+    color: var(--text-muted);
+    border-color: var(--border-color);
 }
 
 .resume-btn::before,
@@ -564,8 +584,7 @@ header {
   border-radius: 12px;
   padding: 5px;
   overflow: hidden;
-  box-shadow:
-    0 2px 5px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
   transition: box-shadow 0.3s ease;
 }
 
@@ -580,7 +599,6 @@ header {
 }
 
 .project-card:hover {
-  /* Outer border stays gray */
   border-color: #d4d4d4;
   box-shadow:
     0 4px 12px rgba(0, 0, 0, 0.12);
@@ -674,7 +692,6 @@ header {
   display: block;
   font-size: 1rem;
   text-decoration: none;
-  color: black;
 }
 
 .project-card:hover .project-content {
@@ -1063,7 +1080,7 @@ header {
 }
 
 .contact-container .contact-header {
-  font-family: "anthoreg";
+  font-family: "Fraunces", serif;
   font-size: 2rem;
   line-height: 1.2;
   letter-spacing: -1px;
@@ -1456,10 +1473,7 @@ header {
     backdrop-filter: none;
     transition: background 0.3s ease, backdrop-filter 0.3s ease;
   }
-  .navbar.scrolled {
-    background: rgba(255, 255, 255, 0.45);
-    backdrop-filter: blur(10px);
-  }
+
   .home {
     padding-top: 80px;
   }
@@ -1745,4 +1759,86 @@ header {
     aspect-ratio: 1 / 1; /* keeps boxes square */
   }
 
+}
+
+/* ========================== DARK MODE ========================== */
+
+html[data-theme="dark"] body {
+  background: var(--surface-page);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"] .nav-links,
+html[data-theme="dark"] .mobile-menu {
+  background: var(--surface-navbar);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+}
+
+html[data-theme="dark"] .nav-highlight {
+  background: var(--surface-pill);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.22);
+}
+
+html[data-theme="dark"] .nav-links a,
+html[data-theme="dark"] .mobile-menu a {
+  color: var(--text-muted);
+}
+
+html[data-theme="dark"] .nav-links a:hover,
+html[data-theme="dark"] .nav-links a.pill-active,
+html[data-theme="dark"] .mobile-menu a:hover {
+  color: var(--text-heading);
+}
+
+html[data-theme="dark"] .theme-toggle {
+  background: #2d2b30;
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #f3c96b;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.32);
+}
+
+html[data-theme="dark"] .hamburger span {
+  background: var(--text-primary);
+}
+
+html[data-theme="dark"] .global-wrapper {
+  border-color: #343238;
+}
+
+html[data-theme="dark"] .section-title,
+html[data-theme="dark"] .home-text h1,
+html[data-theme="dark"] .contact-container .contact-header,
+html[data-theme="dark"] .project-title,
+html[data-theme="dark"] .expertise-content h3,
+html[data-theme="dark"] .certifications-card h1 {
+  color: var(--text-heading);
+}
+
+html[data-theme="dark"] .project-card,
+html[data-theme="dark"] .expertise-card,
+html[data-theme="dark"] .certifications-card,
+html[data-theme="dark"] .contact-container {
+  background: var(--surface-card);
+  border-color: var(--border-color);
+}
+
+html[data-theme="dark"] .project-content,
+html[data-theme="dark"] .project-card:hover .project-content {
+  background: #2d2b30;
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"] .project-title-container .project-description,
+html[data-theme="dark"] .expertise-content p,
+html[data-theme="dark"] .skills-content p,
+html[data-theme="dark"] .cert-description p,
+html[data-theme="dark"] .contact-container .contact-status,
+html[data-theme="dark"] .contact-info p {
+  color: #b4adb1;
+}
+
+html[data-theme="dark"] .divider,
+html[data-theme="dark"] .border-bottom {
+  border-color: var(--border-color);
 }
