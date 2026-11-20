@@ -14,8 +14,8 @@
     --color-grey-light: #f0f0f0;
 
     /* Surfaces */
-    --surface-page: #f7f7f7;
-    --surface-navbar: rgba(255, 255, 255, 0.92);
+    --surface-page: #ffffff;
+    --surface-navbar: rgba(255, 255, 255, 1);
     --surface-card: #ffffff;
     --surface-pill: rgba(215, 215, 215, 0.65);
     --surface-project: #f1f1f1;
@@ -45,7 +45,7 @@ html[data-theme="dark"] {
 
     /* Surfaces */
     --surface-page: #171617;
-    --surface-navbar: rgba(28, 27, 29, 0.92);
+    --surface-navbar: rgba(28, 27, 29, 1);
     --surface-card: #242326;
     --surface-pill: rgba(255, 255, 255, 0.12);
     --surface-project: #29272a;
@@ -197,7 +197,8 @@ header {
 }
 
 .section-title {
-  font-family: "Fraunces", serif;
+  font-family: "Geist", sans-serif;
+  font-weight: 500;
   letter-spacing: -0.6px;
   font-size: 1.3rem;
   color: var(--text-heading);
@@ -291,30 +292,44 @@ header {
   align-items: center;
   gap: 0.75rem;
 }
-
+/* ========================== THEME TOGGLE ========================== */
 .theme-toggle {
+  position: relative;
   width: 38px;
   height: 38px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
   border-radius: 50%;
+  border: 1px solid var(--border-color);
   background: var(--surface-navbar);
   color: var(--text-primary);
-  border-color: var(--border-color);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.06),
+    0 4px 14px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
   transition:
-    transform 0.25s ease,
-    background 0.25s ease,
-    color 0.25s ease,
-    box-shadow 0.25s ease;
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
 }
 
 .theme-toggle:hover {
-  transform: translateY(-2px) rotate(8deg);
+  transform: translateY(-2px);
   color: #b56f87;
-  box-shadow: 0 7px 18px rgba(0, 0, 0, 0.14);
+  border-color: #b56f87;
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.08),
+    0 8px 20px rgba(181, 111, 135, 0.25);
+}
+
+.theme-toggle:active {
+  transform: translateY(0) scale(0.92);
+  transition-duration: 0.1s;
 }
 
 .theme-toggle:focus-visible {
@@ -323,8 +338,14 @@ header {
 }
 
 .theme-toggle .theme-icon {
+  display: inline-block;
   font-size: 0.95rem;
-  transition: transform 0.35s ease;
+  line-height: 1;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.theme-toggle:hover .theme-icon {
+  transform: rotate(20deg);
 }
 
 .logo img {
@@ -362,7 +383,7 @@ header {
   min-height: 80vh;
   max-width: 650px;
   margin: 0 auto;
-  padding: 6.5rem 0;
+  padding: 6rem 0 2rem;
   display: flex;
   align-items: center;
 }
@@ -383,65 +404,138 @@ header {
   gap: 0.6rem;
 }
 
-/* ===== Twitter-style banner ===== */
+/* ===== Twitter-style Banner ===== */
 .profile-header {
-  position: relative;
-  width: 100%;
-  height: 220px;
-  border-radius: 6px;
-  overflow: visible;
-  margin-bottom: 3.5rem;
-
-  background:
-  radial-gradient(
-    ellipse at 15% 20%,
-    rgba(225, 215, 221, 0.65) 0%,
-    rgba(225, 215, 221, 0.2) 35%,
-    transparent 65%
-  ),
-  radial-gradient(
-    ellipse at 85% 75%,
-    rgba(196, 179, 190, 0.7) 0%,
-    rgba(155, 114, 128, 0.3) 40%,
-    transparent 70%
-  ),
-  linear-gradient(
-    135deg,
-    #755662 0%,
-    #9b7280 50%,
-    #c4b3be 100%
-  );
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    height: 220px;
+    border-radius: 6px;
+    overflow: visible;
+    margin-bottom: 0;
 }
 
-/* ===== Kinetic Grid Canvas ===== */
-#kinetic-grid {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-  z-index: 1;
-  pointer-events: none;
+/* ===== Butterfly Container ===== */
+.click-butterfly {
+    position: absolute;
+    z-index: 5;
+    width: 20px;  /* Smaller butterfly */
+    height: 20px;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    animation: butterfly-float 2.8s ease-out forwards;
 }
 
+/* ===== Butterfly SVG ===== */
+.butterfly-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+/* ===== Animated Wings ===== */
+.butterfly-wing {
+    transform-box: view-box;
+    transform-origin: 50% 50%;
+}
+
+.butterfly-wing-left {
+    transform-origin: 24px 20px;
+    animation: wing-flap-left 0.3s ease-in-out infinite alternate;
+}
+
+.butterfly-wing-right {
+    transform-origin: 24px 20px;
+    animation: wing-flap-right 0.3s ease-in-out infinite alternate;
+}
+
+@keyframes wing-flap-left {
+    from {
+        transform: scaleX(1);
+    }
+    to {
+        transform: scaleX(0.35);
+    }
+}
+
+@keyframes wing-flap-right {
+    from {
+        transform: scaleX(1);
+    }
+    to {
+        transform: scaleX(0.35);
+    }
+}
+
+/* ===== Floating Animation ===== */
+@keyframes butterfly-float {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.3);
+    }
+
+    15% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    40% {
+        transform: translate(calc(-50% + 12px), -45px) rotate(8deg);
+    }
+
+    70% {
+        opacity: 1;
+        transform: translate(calc(-50% - 10px), -85px) rotate(-8deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(calc(-50% + 15px), -125px) scale(0.7) rotate(12deg);
+    }
+}
+
+/* ===== Accessibility ===== */
+@media (prefers-reduced-motion: reduce) {
+    .click-butterfly {
+        animation: none;
+        opacity: 0;
+    }
+    .butterfly-wing {
+        animation: none;
+    }
+}
+
+.banner-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 55%;
+    border-radius: 6px;
+    z-index: 1;
+}
+
+/* ===== Profile Picture ===== */
 .profile-pic {
-  position: absolute;
-  bottom: -50px;
-  left: 24px;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border: 4px solid var(--surface-page);
-  object-fit: cover;
-  z-index: 3;
-  transition: transform 0.5s;
+    position: absolute;
+    bottom: -50px;
+    left: 24px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid var(--surface-page);
+    object-fit: cover;
+    z-index: 3;
+    transition: transform 0.5s;
 }
+
 
 .home-text p {
   width: 100%;
   text-align: start;
   color: var(--text-description);
-  font-size: 0.9rem;
+  font-size: 16px;
   line-height: 1.3rem;
   margin-bottom: 1rem;
 }
@@ -450,19 +544,22 @@ header {
 }
 
 .home-text h1{
-  font-family: "Fraunces", serif;
-  font-weight: 600;
+  font-family: "Agrave Pro", cursive;
+  font-optical-sizing: auto;
+  font-weight: 700;
   letter-spacing: -0.5px;
   font-size: 1.6rem;
   color: var(--text-heading);
 }
 
 /* ========================== HOME BUTTONS ========================== */
-.home-buttons {
+.home-text > .home-buttons {
+  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
+  padding: 0.25rem 0;
 }
 
 .home-buttons a {
@@ -470,19 +567,22 @@ header {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.2rem;
-  padding: 0.2rem 0.5rem;
-  border-radius: 6px;
-  border: 1px solid #dedede;
-  text-decoration: none;
+  gap: 0.45rem;
+  padding: 0.3rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
   font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-decoration: none;
   cursor: pointer;
   overflow: hidden;
   isolation: isolate;
   transition:
-    color 0.3s 0.1s ease-out,
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease,
+    color 0.3s ease,
     border-color 0.3s ease;
-  /*box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);*/
 }
 
 .home-buttons a span,
@@ -491,11 +591,12 @@ header {
   z-index: 2;
 }
 
-.resume-btn img, .contact-btn img {
+.resume-btn img,
+.contact-btn img {
   width: 15px;
   height: 15px;
   display: block;
-  transition: filter 0.3s ease;
+  transition: filter 0.3s ease, transform 0.35s ease;
 }
 
 .contact-btn img {
@@ -504,26 +605,25 @@ header {
 
 .resume-btn,
 .contact-btn {
-    background: var(--surface-button);
-    color: var(--text-muted);
-    border-color: var(--border-color);
+  background: var(--surface-button);
+  color: var(--text-muted);
+  border-color: var(--border-color);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.06),
+    0 4px 12px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
+/* Gradient sweep fill on hover */
 .resume-btn::before,
 .contact-btn::before {
-  position: absolute;
-  top: 0;
-  left: -5em;
-  right: 0;
-  bottom: 0;
-  margin: auto;
   content: "";
-  width: 20em;
-  height: 20em;
-  border-radius: 50%;
-  background: #4d3843;
-  transform: scale(0);
-  transition: transform 0.5s ease-out;
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #4d3843 0%, #755662 100%);
+  transform: translateX(-101%);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   z-index: -1;
 }
 
@@ -531,36 +631,39 @@ header {
 .contact-btn:hover {
   color: #fff;
   border-color: #4d3843;
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.08),
+    0 10px 24px rgba(77, 56, 67, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
+
 .resume-btn:hover::before,
 .contact-btn:hover::before {
-  transform: scale(1);
+  transform: translateX(0);
 }
 
 .resume-btn:hover img,
 .contact-btn:hover img {
   filter: brightness(0) invert(1);
+  transform: translateX(2px);
 }
 
 .resume-btn:active,
 .contact-btn:active {
-  transform: translateY(2px);
+  transform: translateY(0) scale(0.97);
+  transition-duration: 0.1s;
 }
+
+.resume-btn:focus-visible,
+.contact-btn:focus-visible {
+  outline: 2px solid #b56f87;
+  outline-offset: 3px;
+}
+
 
 .home-text {
   position: relative;
   z-index: 1;          
-}
-
-.scroll-down {
-  display: inline-flex;
-  margin-top: 2rem;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.scroll-down:hover {
-  transform: translateY(5px);
 }
 
 /* ============================== PROJECTS ============================== */
@@ -1024,7 +1127,6 @@ header {
 
 .contact-container {
   margin: 0 auto;
-  background-color: #fafafa;
   display: flex;
   flex-direction: column;
   
@@ -1080,8 +1182,9 @@ header {
 }
 
 .contact-container .contact-header {
-  font-family: "Fraunces", serif;
+  font-family: "Agrave Pro", cursive;
   font-size: 2rem;
+  font-weight: 700;
   line-height: 1.2;
   letter-spacing: -1px;
   color: #1a1a1a;
@@ -1532,7 +1635,7 @@ header {
   .profile-header {
     width: 100%;
     height: 160px;
-    margin-bottom: 3rem;
+    margin-bottom: 0;
   }
 
   .resume-btn {
@@ -1551,6 +1654,23 @@ header {
     flex-direction: row;
     justify-content: center;
     gap: 1rem;
+  }
+
+  .home-text > .home-buttons {
+    min-height: 3rem;
+    padding-right: 12px;
+    gap: 0.3rem;
+  }
+
+  .home-text > .home-buttons a {
+    gap: 0.1rem;
+    padding: 0.25rem 0.3rem;
+    font-size: 0.65rem;
+  }
+
+  .home-text > .home-buttons img {
+    width: 12px;
+    height: 12px;
   }
 
   .project-cards {
@@ -1761,8 +1881,23 @@ header {
 
 }
 
-/* ========================== DARK MODE ========================== */
+@media (max-width: 360px) {
+  .home-text > .home-buttons {
+    padding-right: 8px;
+    gap: 0.2rem;
+  }
 
+  .home-text > .home-buttons a {
+    padding: 0.2rem 0.15rem;
+    font-size: 0.55rem;
+  }
+
+  .home-text > .home-buttons img {
+    display: none;
+  }
+}
+
+/* ========================== DARK MODE ========================== */
 html[data-theme="dark"] body {
   background: var(--surface-page);
   color: var(--text-primary);
@@ -1818,10 +1953,7 @@ html[data-theme="dark"] .certifications-card h1 {
 html[data-theme="dark"] .project-card,
 html[data-theme="dark"] .expertise-card,
 html[data-theme="dark"] .certifications-card,
-html[data-theme="dark"] .contact-container {
-  background: var(--surface-card);
-  border-color: var(--border-color);
-}
+
 
 html[data-theme="dark"] .project-content,
 html[data-theme="dark"] .project-card:hover .project-content {
@@ -1836,6 +1968,7 @@ html[data-theme="dark"] .cert-description p,
 html[data-theme="dark"] .contact-container .contact-status,
 html[data-theme="dark"] .contact-info p {
   color: #b4adb1;
+  border: 1px solid white;
 }
 
 html[data-theme="dark"] .divider,

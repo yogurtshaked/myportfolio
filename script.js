@@ -1,4 +1,45 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const butterflyColors = [
+    { upper: "#D9A9B8", lower: "#EBCBD2", stroke: "#A77D8B" },
+    { upper: "#B9A9C9", lower: "#D6C9DF", stroke: "#8D7B9E" },
+    { upper: "#D9C5A2", lower: "#F0DFBF", stroke: "#AD9574" },
+  ];
+
+  const profileHeader = document.querySelector(".profile-header");
+
+  if (profileHeader) {
+    profileHeader.addEventListener("click", (event) => {
+      const rect = profileHeader.getBoundingClientRect();
+      const variant = Math.floor(Math.random() * butterflyColors.length);
+      const color = butterflyColors[variant];
+      const butterfly = document.createElement("span");
+
+      butterfly.className = "click-butterfly";
+      butterfly.setAttribute("aria-hidden", "true");
+      butterfly.style.left = `${event.clientX - rect.left}px`;
+      butterfly.style.top = `${event.clientY - rect.top}px`;
+      butterfly.innerHTML = `
+        <svg class="butterfly-svg" viewBox="0 0 48 40" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <g class="butterfly-wing butterfly-wing-left">
+            <path d="M22 19 C17 8,5 1,3 9 C0 18,10 26,22 22 C17 27,12 35,17 37 C23 38,26 27,24 21 Z"
+              fill="${color.upper}" stroke="${color.stroke}" stroke-width="0.8" stroke-linejoin="round"/>
+          </g>
+          <g class="butterfly-wing butterfly-wing-right">
+            <path d="M26 19 C31 8,43 1,45 9 C48 18,38 26,26 22 C31 27,36 35,31 37 C25 38,22 27,24 21 Z"
+              fill="${color.lower}" stroke="${color.stroke}" stroke-width="0.8" stroke-linejoin="round"/>
+          </g>
+          <path d="M24 15 C21 21,22 28,24 31 C26 28,27 21,24 15Z" fill="${color.stroke}"/>
+          <path d="M23 16 Q17 7 15 10 M25 16 Q31 7 33 10"
+            stroke="${color.stroke}" stroke-width="0.8" stroke-linecap="round"/>
+        </svg>
+      `;
+
+      profileHeader.appendChild(butterfly);
+      butterfly.addEventListener("animationend", () => butterfly.remove(), { once: true });
+      window.setTimeout(() => butterfly.remove(), 3000);
+    });
+  }
+
   const savedTheme = localStorage.getItem("portfolio-theme");
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const initialTheme = savedTheme || (prefersDark ? "dark" : "light");
@@ -61,7 +102,6 @@ window.addEventListener("scroll", () => {
     navbar.classList.remove("scrolled");
   }
 });
-
 // Sliding pill indicator
 const nav = document.querySelector(".nav-links");
 const highlight = document.querySelector(".nav-highlight");
