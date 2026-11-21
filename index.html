@@ -1,49 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kristianne Gabas | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.25/dist/lenis.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Agrave+Pro:wght@100..700&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Geist+Mono:ital,wght@0,100..900;1,100..900&family=Geist:ital,wght@0,100..900;1,100..900&family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Agrave+Pro:wght@100..700&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Geist+Mono:ital,wght@0,100..900;1,100..900&family=Geist:ital,wght@0,100..900;1,100..900&family=Gowun+Batang:wght@400;700&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <filter id="oil-pastel" x="-10%" y="-10%" width="120%" height="120%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G"
+          result="rough" />
+        <feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves="2" seed="3" result="grain" />
+        <feColorMatrix in="grain" type="saturate" values="0" result="grainGray" />
+        <feComposite in="rough" in2="grainGray" operator="arithmetic" k1="0" k2="0.85" k3="0.25" k4="0"
+          result="textured" />
+        <feComposite in="textured" in2="rough" operator="in" />
+      </filter>
+    </defs>
+  </svg>
   <div class="shader-gradient"></div>
-  
+
   <!-- Navigation Bar -->
   <div class="body-wrapper">
     <div class="global-wrapper">
-    <header>
-      <div id="navbar"></div>
-    </header>
+      <header>
+        <div id="navbar"></div>
+      </header>
 
 
-    <!-- ============================ HOME SECTION ============================ -->
-    <section class="home" id="home">
+      <!-- ============================ HOME SECTION ============================ -->
+      <section class="home" id="home">
         <div class="home-content">
-          
-          <div class="home-text">
-            
-<div class="profile-header">
-    <img
-        src="images/garden-banner.png"
-        class="banner-image"
-        alt="Oil pastel garden landscape"
-    />
 
-    <img
-        src="images/kei-profile.JPG"
-        class="profile-pic"
-        alt="Profile picture"
-    />
-</div>
+          <div class="home-text">
+
+            <div class="profile-header">
+              <img src="images/garden-banner.png" class="banner-image" alt="Oil pastel garden landscape" />
+
+              <img src="images/kei-profile.JPG" class="profile-pic" alt="Profile picture" />
+            </div>
 
             <div class="home-buttons">
               <!--
@@ -58,84 +68,93 @@
               </a>
               -->
 
-              <a
-                href="#contact"
-                class="contact-btn"
-              >
+              <a href="#contact" class="contact-btn">
                 <span>Contact Me</span>
                 <img src="images/contact-icon.svg" alt="">
               </a>
             </div>
             <div class="intro-text">
               <h1><span class="highlight-font">Khaye Gabas</span></h1>
-              <p>
-                <!--<span>I move pixels until everything feels</span>
-                <span class="highlight-font">just right.</span>-->
-                <span>Hi there :D I'm an aspiring UI/UX Designer and Software Engineer based in Manila. 
-                I’m passionate about designing intuitive experiences that are both 
-                functional and visually engaging.</span>
-              </p>
+              <p><span>Hi there :D I'm an aspiring Software Engineer.
+                  I’m passionate about designing intuitive experiences that are both
+                  functional and visually engaging.</span></p>
+              <p><i class="fa-solid fa-location-dot"></i> Manila, Philippines</p>
             </div>
             <script src="https://animatedicons.co/scripts/embed-animated-icons.js"></script>
           </div>
         </div>
 
-    </section>
+      </section>
 
-    <div class="section-divider"></div>
+      <div class="section-divider"></div>
 
-    <!-- ============================ PROJECTS SECTION ============================ -->
-    <div class="projects-page">
-      <section class="projects" id="projects">
-        
-          <p class="section-title">Featured Projects</p>
+      <!-- ============================ PROJECTS SECTION ============================ -->
+      <div class="projects-page">
+        <section class="projects" id="projects">
+
+          <div class="section-header">
+            <svg class="section-art" viewBox="0 0 64 64" aria-hidden="true">
+              <g filter="url(#oil-pastel)">
+                <g fill="#f2b8c8">
+                  <ellipse cx="32" cy="19" rx="9" ry="13" />
+                  <ellipse cx="32" cy="19" rx="9" ry="13" transform="rotate(72 32 32)" />
+                  <ellipse cx="32" cy="19" rx="9" ry="13" transform="rotate(144 32 32)" />
+                  <ellipse cx="32" cy="19" rx="9" ry="13" transform="rotate(216 32 32)" />
+                  <ellipse cx="32" cy="19" rx="9" ry="13" transform="rotate(288 32 32)" />
+                </g>
+                <circle cx="32" cy="32" r="7" fill="#f7e08a" />
+                <path d="M32 45 Q30 55 34 62" stroke="#9fc5a0" stroke-width="3" fill="none" stroke-linecap="round" />
+              </g>
+            </svg>
+            <p class="section-title" style="color: #dca5b4 !important;">featured projects</p>
+          </div>
           <!-- <img src="images/black-line.png" alt="" class="black-line">-->
-          <div class="project-cards"> 
-            <a href="https://drive.google.com/drive/folders/14dBJShjwb-2rmHZCh45LYRgde37WzJMJ?usp=sharing" class="project-link" target="_blank" 
-                    rel="noopener noreferrer">
-            <div class="project-card">
-              <div class="project-images" chloro-images>
-                <img src="images/chloro/chloro.png" alt="mockup 1">
-                
+          <div class="project-cards">
+            <a href="https://drive.google.com/drive/folders/14dBJShjwb-2rmHZCh45LYRgde37WzJMJ?usp=sharing"
+              class="project-link" target="_blank" rel="noopener noreferrer">
+              <div class="project-card">
+                <div class="project-images" chloro-images>
+                  <img src="images/chloro/chloro.png" alt="mockup 1">
+
+                </div>
+                <div class="project-content">
+                  <div class="project-title-container">
+                    <h2 class="project-title">Chloro</h2>
+                    <!--<p class="project-year">Sep 2024 – July 2025</p>-->
+                    <p class="project-description">A monitoring application that tracks the
+                      quality of hydroponically grown lettuce and forecasts the
+                      best time to harvest.
+                    </p>
+                  </div>
+                  <div class="project-tech">
+                    <p>Flutter/Dart</p>
+                    <p>Supabase</p>
+                    <p>Python</p>
+                  </div>
+                </div>
               </div>
-               <div class="project-content">
-              <div class="project-title-container">
-                <h2 class="project-title">Chloro</h2>
-                <!--<p class="project-year">Sep 2024 – July 2025</p>-->
-                <p class="project-description">A monitoring application that tracks the 
-                              quality of hydroponically grown lettuce and forecasts the 
-                              best time to harvest. 
-                            </p>
-                </div>
-                <div class="project-tech">
-                  <p>Flutter/Dart</p>
-                  <p>Supabase</p>
-                  <p>Python</p>
-                </div>
-                </div>
-            </div>
             </a>
 
-            <a href="https://drive.google.com/drive/folders/1NTAuS8_hnNb6e2k790YPyFyV1UJaj--i?usp=sharing" class="project-link" 
-            target="_blank" rel="noopener noreferrer">
+            <a href="https://drive.google.com/drive/folders/1NTAuS8_hnNb6e2k790YPyFyV1UJaj--i?usp=sharing"
+              class="project-link" target="_blank" rel="noopener noreferrer">
               <div class="project-card">
                 <div class="project-images gcode-images">
                   <img src="images/gcode/gcode.png" alt="mockup 1">
-               
+
                 </div>
                 <div class="project-content">
-                <div class="project-title-container">
-                  <h2 class="project-title">GCode Tunes</h2>
-                  <!--<p class="project-year">Oct 2024 - Dec 2024</p>-->
-                  <p class="project-description">A mobile application that lets users organize and manage their 
-                    favorite songs in a personal repository. </p>
+                  <div class="project-title-container">
+                    <h2 class="project-title">GCode Tunes</h2>
+                    <!--<p class="project-year">Oct 2024 - Dec 2024</p>-->
+                    <p class="project-description">A mobile application that lets users organize and manage their
+                      favorite songs in a personal repository. </p>
+                  </div>
+                  <div class="project-tech">
+                    <p>SQL</p>
+                    <p>Java</p>
+                    <p>RESTful Web API</p>
+                  </div>
                 </div>
-                <div class="project-tech">
-                  <p>SQL</p>
-                  <p>Java</p>
-                  <p>RESTful Web API</p>
-                  </div>
-                  </div>
               </div>
             </a>
 
@@ -144,299 +163,265 @@
                 <div class="project-images siayan-images">
                   <img src="images/siayan/siayanrock.png" alt="mockup 1">
                 </div>
-                        
+
                 <div class="project-content">
-                <div class="project-title-container">
-                  <h2 class="project-title">Siayanrock Is. Hometel Website</h2>
-                  <!--<p class="project-year">SiayanRock – 2024</p>--->
-                  <p class="project-description">A responsive website and online booking platform 
-                          designed for a hometel located in Batanes. </p>       
+                  <div class="project-title-container">
+                    <h2 class="project-title">Siayanrock Is. Hometel Website</h2>
+                    <!--<p class="project-year">SiayanRock – 2024</p>--->
+                    <p class="project-description">A responsive website and online booking platform
+                      designed for a hometel located in Batanes. </p>
+                  </div>
+                  <div class="project-tech">
+                    <p>HTML/CSS</p>
+                    <p>PHP</p>
+                    <p>SQL</p>
+                  </div>
                 </div>
-                <div class="project-tech">
-                  <p>HTML/CSS</p>
-                  <p>PHP</p>
-                  <p>SQL</p>
-                </div>
-                </div> 
               </div>
             </a>
           </div>
 
-      </section>
-    </div>
-
-    <div class="section-divider"></div>
-
-<!-- ============================ EXPERTISE SECTION ============================ -->
-<div class="expertise-page">
-  <section class="expertise" id="services">
-
-    <p class="section-title">What I Do Best</p>
-
-    <div class="expertise-container">
-
-      <div class="expertise-list">
-
-  <button class="expertise-card" data-expertise="1">
-
-    <div class="expertise-header">
-      <span class="card-number">01</span>
-      <span class="card-title">UI/UX Design</span>
-    </div>
-
-    <div class="expertise-description">
-      <p>
-        Designing responsive, intuitive, and user-centered interfaces.
-        I pay close attention to layout, accessibility, and visuals.
-      </p>
-    </div>
-
-  </button>
-
-
-  <button class="expertise-card" data-expertise="2">
-
-    <div class="expertise-header">
-      <span class="card-number">02</span>
-      <span class="card-title">Mobile App Development</span>
-    </div>
-
-    <div class="expertise-description">
-      <p>
-        Building intuitive mobile applications that deliver seamless user
-        experiences across Android and iOS platforms using modern
-        technologies and scalable solutions.
-      </p>
-    </div>
-
-  </button>
-
-
-  <button class="expertise-card" data-expertise="3">
-
-    <div class="expertise-header">
-      <span class="card-number">03</span>
-      <span class="card-title">Web Development</span>
-    </div>
-
-    <div class="expertise-description">
-      <p>
-        Creating responsive and dynamic websites with clean architecture,
-        optimized performance, and user-focused designs that help businesses grow.
-      </p>
-    </div>
-
-  </button>
-
-</div>
-
-    </div>
-
-
-    <!-- SKILLS CARD -->
-    <div class="skill-card">
-      <div class="expertise-inner">
-        
-        <div class="skills-content">
-          <div class="expertise-header">
-            <span class="card-number">04</span>
-            <span class="card-title">Tech Stack</span>
-          </div>
-          <div class="skills-row">
-
-            <div class="skill">
-              <img src="images/logos/Python.png" alt="Python">
-              <p>Python</p>
-            </div>
-
-            <div class="skill">
-              <img src="images/logos/Java.png" alt="Java">
-              <p>Java</p>
-            </div>
-
-            <div class="skill">
-              <img src="images/logos/C++.png" alt="C++">
-              <p>C++</p>
-            </div>
-
-            <div class="skill">
-              <img src="images/logos/Flutter.png" alt="Dart">
-              <p>Dart</p>
-            </div>
-
-            <div class="skill">
-              <img src="images/logos/HTML5.png" alt="HTML">
-              <p>HTML</p>
-            </div>
-
-            <div class="skill">
-              <img src="images/logos/CSS.png" alt="CSS">
-              <p>CSS</p>
-            </div>
-
-            <div class="skill">
-              <img src="images/logos/react.png" alt="React">
-              <p>React</p>
-            </div>
-
-            <div class="skill">
-              <img src="images/logos/Figma.png" alt="Figma">
-              <p>Figma</p>
-            </div>
-
-            <div class="skill">
-              <img src="images/logos/Canva.png" alt="Canva">
-              <p>Canva</p>
-            </div>
-
-            <div class="skill">
-              <img src="images/logos/claude.png" alt="Claude">
-              <p>Claude</p>
-            </div>
-
-            <div class="skill">
-              <img src="images/logos/notion.png" alt="Notion">
-              <p>Notion</p>
-            </div>
-
-          </div>
-
-        </div>
+        </section>
       </div>
-    </div>
 
-  </section>
-</div>
+      <div class="section-divider"></div>
 
-<div class="section-divider"></div>
+      <!-- ============================ EXPERTISE SECTION ============================ -->
+      <div class="expertise-page">
+        <section class="expertise" id="services">
 
-  <!-- ============================== CERTIFICATIONS ============================== -->
-    <div class="certifications-page">
-      <section class="certifications" id="certifications">
-          <p class="section-title">Certifications</p>
-              <!-- <img src="images/black-line.png" alt="" class="black-line">-->
-              <!-- <hr class="divider" />-->
+          <!-- Tech Stack: butterfly -->
+          <div class="section-header">
+            <svg class="section-art" viewBox="0 0 64 64" aria-hidden="true">
+              <g filter="url(#oil-pastel)">
+                <path d="M32 30 C20 10 4 14 8 28 C10 36 22 34 32 30Z" fill="#c9a7d6" />
+                <path d="M32 30 C44 10 60 14 56 28 C54 36 42 34 32 30Z" fill="#c9a7d6" />
+                <path d="M32 32 C22 36 12 42 16 52 C20 58 28 50 32 36Z" fill="#e8a0b4" />
+                <path d="M32 32 C42 36 52 42 48 52 C44 58 36 50 32 36Z" fill="#e8a0b4" />
+                <rect x="30" y="24" width="4" height="22" rx="2" fill="#755662" />
+                <path d="M31 24 Q27 14 22 12 M33 24 Q37 14 42 12" stroke="#755662" stroke-width="1.5" fill="none"
+                  stroke-linecap="round" />
+              </g>
+            </svg>
+            <p class="section-title" style="color: #c9a7d6 !important;">tech stack</p>
+          </div>
 
-          <div class="certifications-container">
-              <div class="certifications-card">
-            
-                <img src="images/devnet-badge.png" alt="" class="certification-img">
-                <div class="cert-description">
-                  <h1 class="certification-title">DevNet Associate</h1>
-                  <p class="cert-issuer">Cisco</p>
-                  <!--<p class="cert-date">January 15, 2025</p>-->   
+          <!-- SKILLS CARD -->
+          <div class="skill-card">
+            <div class="expertise-inner">
+
+              <div class="skills-content">
+                <div class="skills-row">
+
+                  <div class="skill">
+                    <img src="images/logos/Python.png" alt="Python">
+                    <p>Python</p>
+                  </div>
+
+                  <div class="skill">
+                    <img src="images/logos/Java.png" alt="Java">
+                    <p>Java</p>
+                  </div>
+
+                  <div class="skill">
+                    <img src="images/logos/C++.png" alt="C++">
+                    <p>C++</p>
+                  </div>
+
+                  <div class="skill">
+                    <img src="images/logos/Flutter.png" alt="Dart">
+                    <p>Dart</p>
+                  </div>
+
+                  <div class="skill">
+                    <img src="images/logos/HTML5.png" alt="HTML">
+                    <p>HTML</p>
+                  </div>
+
+                  <div class="skill">
+                    <img src="images/logos/CSS.png" alt="CSS">
+                    <p>CSS</p>
+                  </div>
+
+                  <div class="skill">
+                    <img src="images/logos/react.png" alt="React">
+                    <p>React</p>
+                  </div>
+
+                  <div class="skill">
+                    <img src="images/logos/Figma.png" alt="Figma">
+                    <p>Figma</p>
+                  </div>
+
+                  <div class="skill">
+                    <img src="images/logos/Canva.png" alt="Canva">
+                    <p>Canva</p>
+                  </div>
+
+                  <div class="skill">
+                    <img src="images/logos/claude.png" alt="Claude">
+                    <p>Claude</p>
+                  </div>
+
+                  <div class="skill">
+                    <img src="images/logos/notion.png" alt="Notion">
+                    <p>Notion</p>
+                  </div>
+
                 </div>
 
-                
-                <!--<i data-lucide="link" class="cert-link" height="30"width="30"></i>-->
-                <!--<a href="https://www.credly.com/badges/4e64971c-7eb2-4af0-a861-904816724edf/public_url"
+              </div>
+            </div>
+          </div>
+
+        </section>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <!-- ============================== CERTIFICATIONS ============================== -->
+      <div class="certifications-page">
+        <section class="certifications" id="certifications">
+          <div class="section-header">
+            <svg class="section-art" viewBox="0 0 64 64" aria-hidden="true">
+              <g filter="url(#oil-pastel)">
+                <path d="M32 58 L32 30" stroke="#755662" stroke-width="3" fill="none" stroke-linecap="round" />
+                <path d="M32 38 C22 40 16 32 18 24 C26 24 32 30 32 38Z" fill="#9fc5a0" />
+                <path d="M32 32 C32 22 40 14 48 16 C48 26 40 32 32 32Z" fill="#b8d8b0" />
+              </g>
+            </svg>
+            <p class="section-title" style="color: #9fc5a0 !important;">certifications</p>
+          </div>
+          <!-- <img src="images/black-line.png" alt="" class="black-line">-->
+          <!-- <hr class="divider" />-->
+
+          <div class="certifications-container">
+            <div class="certifications-card">
+
+              <img src="images/devnet-badge.png" alt="" class="certification-img">
+              <div class="cert-description">
+                <h1 class="certification-title">DevNet Associate</h1>
+                <p class="cert-issuer">Cisco</p>
+                <!--<p class="cert-date">January 15, 2025</p>-->
+              </div>
+
+
+              <!--<i data-lucide="link" class="cert-link" height="30"width="30"></i>-->
+              <!--<a href="https://www.credly.com/badges/4e64971c-7eb2-4af0-a861-904816724edf/public_url"
                   class="cert-link" target="_blank" rel="noopener noreferrer">
                     <span>Verify</span>
                     <img src="images/resume-icon.svg" class="verify-icon" alt="">
                 </a>-->
+            </div>
+
+            <div class="certifications-card">
+              <img src="images/pmi-badge.png" alt="" class="certification-img">
+              <div class="cert-description">
+                <!--<p class="cert-date">March 19, 2025</p>-->
+                <h1 class="certification-title">Project Management Ready</h1>
+                <p class="cert-issuer">Project Management Institute</p>
               </div>
 
-              <div class="certifications-card">
-                <img src="images/pmi-badge.png" alt="" class="certification-img">
-                <div class="cert-description">
-                  <!--<p class="cert-date">March 19, 2025</p>-->
-                  <h1 class="certification-title">Project Management Ready</h1>
-                  <p class="cert-issuer">Project Management Institute</p>
-                </div>
-              
-                <!--<i data-lucide="link" class="cert-link" height="30"width="30"></i>-->
-                <!--<a href="https://www.credly.com/badges/b816d267-8602-4897-a512-0d1b156fc4c7"
+              <!--<i data-lucide="link" class="cert-link" height="30"width="30"></i>-->
+              <!--<a href="https://www.credly.com/badges/b816d267-8602-4897-a512-0d1b156fc4c7"
                   class="cert-link" target="_blank" rel="noopener noreferrer">
                   <span>Verify</span>
                     <img src="images/resume-icon.svg" class="verify-icon" alt="">
                 </a> -->
+            </div>
+
+            <div class="certifications-card">
+              <img src="images/python-badge.png" alt="" class="certification-img">
+
+              <div class="cert-description">
+                <!--<p class="cert-date">July 14, 2024</p>-->
+                <h1 class="certification-title">IT Specialist - Python</h1>
+                <p class="cert-issuer">Certiport</p>
               </div>
 
-              <div class="certifications-card">
-                <img src="images/python-badge.png" alt="" class="certification-img">
-                
-                <div class="cert-description">
-                  <!--<p class="cert-date">July 14, 2024</p>-->
-                  <h1 class="certification-title">IT Specialist - Python</h1>
-                  <p class="cert-issuer">Certiport</p>
-                </div>
-              
-                <!--<i data-lucide="link" class="cert-link" height="30"width="30"></i>-->
-                <!--<a href="https://www.credly.com/badges/ddf3d629-7857-4cfc-90ed-ab5c3529f501"
+              <!--<i data-lucide="link" class="cert-link" height="30"width="30"></i>-->
+              <!--<a href="https://www.credly.com/badges/ddf3d629-7857-4cfc-90ed-ab5c3529f501"
                   class="cert-link" target="_blank" rel="noopener noreferrer">
                   <span>Verify</span>
                     <img src="images/resume-icon.svg" class="verify-icon" alt="">
-                </a>-->  
+                </a>-->
+            </div>
+
+            <div class="certifications-card">
+              <img src="images/seeq.jpg" alt="" class="certification-img">
+
+              <div class="cert-description">
+                <!--<p class="cert-date">Feb 11, 2026</p>-->
+                <h1 class="certification-title">Seeq Super User Test</h1>
+                <p class="cert-issuer">Seeq Corporation</p>
               </div>
 
-              <div class="certifications-card">
-                <img src="images/seeq.jpg" alt="" class="certification-img">
-                
-                <div class="cert-description">
-                  <!--<p class="cert-date">Feb 11, 2026</p>-->
-                  <h1 class="certification-title">Seeq Super User Test</h1>
-                  <p class="cert-issuer">Seeq Corporation</p>
-                </div>
-              
-                <!--<i data-lucide="link" class="cert-link" height="30"width="30"></i>-->
-                <!--<a href="https://www.linkedin.com/in/kristianne-gabas-993a842a1/overlay/Certifications/1269812182/treasury/?profileId=ACoAAEjzsH8BEwbIdC8hCQBo0GHbevQrq9G_mbA"
+              <!--<i data-lucide="link" class="cert-link" height="30"width="30"></i>-->
+              <!--<a href="https://www.linkedin.com/in/kristianne-gabas-993a842a1/overlay/Certifications/1269812182/treasury/?profileId=ACoAAEjzsH8BEwbIdC8hCQBo0GHbevQrq9G_mbA"
                   class="cert-link" target="_blank" rel="noopener noreferrer">
                   <span>Verify</span>
                     <img src="images/resume-icon.svg" class="verify-icon" alt="">
                 </a>  -->
-              </div>
+            </div>
           </div>
 
+        </section>
+      </div>
+
+      <!-- ============================ contact SECTION ============================ -->
+      <section class="contact" id="contact">
+        <div class="contact-container">
+
+          <div class="contact-status">
+            <span class="status-dot"></span>
+            <span>Open for work</span>
+          </div>
+
+          <div class="contact-content">
+            <div class="contact-description">
+              <h1 class="contact-header">Let's turn your ideas into reality!</h1>
+              <div class="contact-contact">
+                <p>Just want to connect? Hit me up!</p>
+                <p><i class="fa-solid fa-location-dot"></i> Based in Manila, PH</p>
+              </div>
+            </div>
+
+            <div>
+              <p class="social-title">SOCIALS</p>
+              <div class="social-icons">
+                <a href="https://www.linkedin.com/in/kristianne-gabas-993a842a1/" class="social-icon" target="_blank"
+                  rel="noopener noreferrer"><img width="48" height="48"
+                    src="https://img.icons8.com/fluency/48/linkedin.png" alt="linkedin" /></a>
+                <a href="https://www.facebook.com/keigabas/" class="social-icon" target="_blank"
+                  rel="noopener noreferrer"><img width="48" height="48"
+                    src="https://img.icons8.com/fluency/48/facebook-new.png" alt="facebook-new" /></a>
+                <a href="https://www.instagram.com/khgabas/" class="social-icon" target="_blank"
+                  rel="noopener noreferrer"><img width="48" height="48"
+                    src="https://img.icons8.com/fluency/48/instagram-new.png" alt="instagram-new" /></a>
+                <a href="https://github.com/yogurtshaked" class="social-icon github-icon" target="_blank"
+                  rel="noopener noreferrer"><img width="48" height="48"
+                    src="https://img.icons8.com/fluency-systems-filled/48/github.png" alt="github" /></i></a>
+                <a href="mailto:kristiannegabas@gmail.com" class="social-icon" target="_blank"
+                  rel="noopener noreferrer"><img width="48" height="48"
+                    src="https://img.icons8.com/fluency/48/microsoft-outlook-2025.png"
+                    alt="microsoft-outlook-2025" /></i></a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- <p class="copyright">&copy; 2025 Kristianne Gabas. All rights reserved.</p>-->
       </section>
     </div>
-
-<!-- ============================ contact SECTION ============================ -->
-    <section class="contact" id="contact">
-      <div class="contact-container">
-
-        <div class="contact-status">
-          <span class="status-dot"></span>
-          <span>Open for work</span>
-        </div>
-        
-        <div class="contact-content">
-          <div class="contact-description">
-            <h1 class="contact-header">Let's turn your ideas into reality!</h1>
-            <div class="contact-contact">
-              <p>Just want to connect? Hit me up!</p>
-              <p><i class="fa-solid fa-location-dot"></i> Based in Manila, PH</p>
-            </div>
-          </div>
-
-          <div>
-            <p class="social-title">SOCIALS</p>
-            <div class="social-icons">
-              <a href="https://www.linkedin.com/in/kristianne-gabas-993a842a1/" class="social-icon" target="_blank" 
-                rel="noopener noreferrer"><img width="48" height="48" src="https://img.icons8.com/fluency/48/linkedin.png" alt="linkedin"/></a>
-              <a href="https://www.facebook.com/keigabas/" class="social-icon" target="_blank" 
-                rel="noopener noreferrer"><img width="48" height="48" src="https://img.icons8.com/fluency/48/facebook-new.png" alt="facebook-new"/></a>
-              <a href="https://www.instagram.com/khgabas/" class="social-icon" target="_blank" 
-                rel="noopener noreferrer"><img width="48" height="48" src="https://img.icons8.com/fluency/48/instagram-new.png" alt="instagram-new"/></a>
-              <a href="https://github.com/yogurtshaked" class="social-icon" target="_blank" 
-                rel="noopener noreferrer"><img width="48" height="48" src="https://img.icons8.com/fluency-systems-filled/48/github.png" alt="github"/></i></a>
-              <a href="mailto:kristiannegabas@gmail.com" class="social-icon" target="_blank" 
-                rel="noopener noreferrer"><img width="48" height="48" src="https://img.icons8.com/fluency/48/microsoft-outlook-2025.png" alt="microsoft-outlook-2025"/></i></a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-      <!-- <p class="copyright">&copy; 2025 Kristianne Gabas. All rights reserved.</p>-->
-    </section>
-</div>
   </div>
 
-    <!-- ============================ SCRIPT SECTION ============================ -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="script.js"></script>
-    <script src="https://unpkg.com/lenis@1.3.25/dist/lenis.min.js"></script> 
-    <script>new Lenis({ autoRaf: true, autoToggle: true, anchors: true, allowNestedScroll: true, naiveDimensions: true, stopInertiaOnNavigate: true })</script>
-    <script>console.log(window.Lenis);</script>
+  <!-- ============================ SCRIPT SECTION ============================ -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/lenis@1.3.25/dist/lenis.min.js"></script>
+  <script>new Lenis({ autoRaf: true, autoToggle: true, anchors: true, allowNestedScroll: true, naiveDimensions: true, stopInertiaOnNavigate: true })</script>
+  <script>console.log(window.Lenis);</script>
 </body>
+
 </html>
